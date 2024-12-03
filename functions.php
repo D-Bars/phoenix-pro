@@ -8,6 +8,18 @@ add_action('wp_enqueue_scripts', function(){
     wp_enqueue_script('jquery' );
 });
 
+add_action('after_setup_theme', function(){
+    add_theme_support('custom-logo', array(
+        'height' => 102,
+        'width' => 289,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ));
+    load_theme_textdomain('firm', get_template_directory() . '/languages');
+    add_theme_support('post-thumbnails');
+    add_theme_support('title-tag');
+});
+
 
 function get__localize__title($objId) {
     $obj_title = get_the_title($objId);
@@ -21,3 +33,4 @@ function get__localize__content($objId) {
 function wp_dump( $data ) {
 	echo "<pre>" . print_r( $data, 1 ) . "</pre>";
 }
+
