@@ -9,7 +9,7 @@ $color3: #472622;
 $fontColor: #000;
 $font1: 'Montserrat';
 $font_size: 1.1vw;
-$mfont_size: 5vw;
+$mfont_size: 6vw;
 // ПЕРЕМЕННЫЕ 
 
 // МИКСИНЫ
@@ -114,25 +114,25 @@ $mfont_size: 5vw;
 @mixin closer__btn {
   & {
     cursor: pointer;
-    width: math.div(2, 1) * 1vw;
-    height: math.div(2, 1) * 1vw;
+    width: math.div(2, 1) * 1.2vw;
+    height: math.div(2, 1) * 1.2vw;
     position: absolute;
-    right: 0.5vw;
-    top: 0.5vw;
-    background: url(img/close.png), $color3;
+    right: 1vw;
+    top: 1vw;
+    border-radius: 10px;
+    box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.8);
+    background: url(../img/close.png), $color3;
     background-size: 70% 70%;
+    background-color: $color3;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 999;
 
     @media screen and (max-width: 800px) {
       & {
-        width: math.div(10, 1) * 1vw;
-        height: math.div(10, 1) * 1vw;
+        width: math.div(10, 1) * 1.2vw;
+        height: math.div(10, 1) * 1.2vw;
       }
-    }
-
-    &:hover {
-      background-color: red;
     }
   }
 }
@@ -252,7 +252,13 @@ nav {
   justify-content: center;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 /* BASIC */
+
+/* ============================= HEADER ============================= */
 
 .header__line {
   padding: 0.3vw 2.5%;
@@ -275,7 +281,7 @@ nav {
   @include text(150%, 800, $fontColor);
 }
 
-.header__menu__wrapper {  
+.header__menu__wrapper {
   @include box(40%, 1.5%);
 
   @media screen and (max-width: 800px) {
@@ -283,7 +289,7 @@ nav {
   }
 }
 
-.burger__menu{
+.burger__menu {
   display: none;
 
   @media screen and (max-width: 800px) {
@@ -298,7 +304,7 @@ nav {
     height: auto;
     z-index: 991;
 
-    & img{
+    & img {
       width: 100%;
       object-fit: cover;
     }
@@ -306,25 +312,51 @@ nav {
 }
 
 .header__menu__box {
+  width: 100%;
+
+
+  @media screen and (max-width: 800px) {
+    position: fixed;
+    width: 100vw;
+    top: -100dvh;
+    left: 0;
+    max-height: 100dvh;
+    z-index: 993;
+  }
+}
+
+.header__lang__menu__box {
+  width: 100%;
+
+  @include flex__box(row, center, space-between);
+
+  @media screen and (max-width: 800px) {
+    position: relative;
+    width: 95%;
+    background-color: $color2;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 0 15px 15px;
+    padding: 5vw 2.5%;
+    gap: 4vw;
+    z-index: 993;
+  }
+}
+
+.header__menu__items__box {
   list-style: none;
+  margin: 0;
   gap: 1vw;
 
   @include box(100%);
-  @include flex__box(row, center, flex-end);
+  @include flex__box(row, center);
   @include text(120%, 600, $fontColor);
 
   @media screen and (max-width: 800px) {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 5vw 0vw;
+    order: 2;
     flex-direction: column;
-    justify-content: center;
-    background-color: $color2;
+    align-items: center;
     gap: 4vw;
-    max-height: 100dvh;
-    z-index: 992;
   }
 
   & li {
@@ -335,7 +367,63 @@ nav {
 
     &:hover {
       top: -0.1vw;
+      color: $color3;
       text-shadow: 1px 8px 8px $fontColor;
     }
   }
 }
+
+.header__lang__box {
+  gap: 0.5vw;
+  line-height: 1;
+
+  @include flex__box(inline-flex, center);
+  @include text(120%, 600);
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    order: 1;
+    font-size: 7vw;
+    justify-content: flex-start;
+  }
+
+  & .active__lang {
+    @include text(130%, 800, $color3);
+
+    @media screen and (max-width: 800px) {
+      font-size: 9vw;
+    }
+  }
+
+  & span {
+    padding-top: 0.1vw;
+
+    @include text(130%);
+  }
+}
+
+.header__menu__closer {
+  display: none;
+
+  @include closer__btn();
+
+  @media screen and (max-width: 800px) {
+    display: block;
+  }
+}
+
+.header__mask {
+  display: none;
+
+  @media screen and (max-width: 800px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(#000, 0.7);
+  }
+}
+
+/* ============================= HEADER ============================= */

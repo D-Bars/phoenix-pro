@@ -98,7 +98,12 @@ nav {
   justify-content: center;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* BASIC */
+/* ============================= HEADER ============================= */
 .header__line {
   padding: 0.3vw 2.5%;
   background-color: #FF9844;
@@ -158,7 +163,7 @@ nav {
 }
 @media screen and (max-width: 800px) {
   .logo__name {
-    font-size: 7.5vw;
+    font-size: 9vw;
   }
 }
 
@@ -204,10 +209,48 @@ nav {
 }
 
 .header__menu__box {
+  width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .header__menu__box {
+    position: fixed;
+    width: 100vw;
+    top: -100dvh;
+    left: 0;
+    max-height: 100dvh;
+    z-index: 993;
+  }
+}
+
+.header__lang__menu__box {
+  width: 100%;
+}
+.header__lang__menu__box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 800px) {
+  .header__lang__menu__box {
+    position: relative;
+    width: 95%;
+    background-color: #FF9844;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 0 15px 15px;
+    padding: 5vw 2.5%;
+    gap: 4vw;
+    z-index: 993;
+  }
+}
+
+.header__menu__items__box {
   list-style: none;
+  margin: 0;
   gap: 1vw;
 }
-.header__menu__box {
+.header__menu__items__box {
   width: 100%;
   padding-left: 0%;
   padding-right: 0%;
@@ -215,50 +258,152 @@ nav {
   height: auto;
 }
 @media screen and (max-width: 800px) {
-  .header__menu__box {
+  .header__menu__items__box {
     width: 100%;
     padding: 0;
   }
 }
-.header__menu__box {
+.header__menu__items__box {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: unset;
 }
-.header__menu__box {
+.header__menu__items__box {
   font-size: 144%;
   font-family: "Montserrat";
   font-weight: 600;
   color: #000;
 }
 @media screen and (max-width: 800px) {
-  .header__menu__box {
-    font-size: 6vw;
+  .header__menu__items__box {
+    font-size: 7.2vw;
   }
 }
 @media screen and (max-width: 800px) {
-  .header__menu__box {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 5vw 0vw;
+  .header__menu__items__box {
+    order: 2;
     flex-direction: column;
-    justify-content: center;
-    background-color: #FF9844;
+    align-items: center;
     gap: 4vw;
-    max-height: 100dvh;
-    z-index: 992;
   }
 }
-.header__menu__box li {
+.header__menu__items__box li {
   position: relative;
   top: 0;
   text-shadow: 0px 0px 1px #000;
   transition: 0.4s;
 }
-.header__menu__box li:hover {
+.header__menu__items__box li:hover {
   top: -0.1vw;
+  color: #472622;
   text-shadow: 1px 8px 8px #000;
 }
+
+.header__lang__box {
+  gap: 0.5vw;
+  line-height: 1;
+}
+.header__lang__box {
+  display: flex;
+  flex-direction: inline-flex;
+  align-items: center;
+  justify-content: unset;
+}
+.header__lang__box {
+  font-size: 144%;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: #000;
+}
+@media screen and (max-width: 800px) {
+  .header__lang__box {
+    font-size: 7.2vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header__lang__box {
+    width: 100%;
+    order: 1;
+    font-size: 7vw;
+    justify-content: flex-start;
+  }
+}
+.header__lang__box .active__lang {
+  font-size: 169%;
+  font-family: "Montserrat";
+  font-weight: 800;
+  color: #472622;
+}
+@media screen and (max-width: 800px) {
+  .header__lang__box .active__lang {
+    font-size: 7.8vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header__lang__box .active__lang {
+    font-size: 9vw;
+  }
+}
+.header__lang__box span {
+  padding-top: 0.1vw;
+}
+.header__lang__box span {
+  font-size: 169%;
+  font-family: "Montserrat";
+  font-weight: 400;
+  color: #000;
+}
+@media screen and (max-width: 800px) {
+  .header__lang__box span {
+    font-size: 7.8vw;
+  }
+}
+
+.header__menu__closer {
+  display: none;
+}
+.header__menu__closer {
+  cursor: pointer;
+  width: 2.4vw;
+  height: 2.4vw;
+  position: absolute;
+  right: 1vw;
+  top: 1vw;
+  border-radius: 10px;
+  box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.8);
+  background: url(../img/close.png), #472622;
+  background-size: 70% 70%;
+  background-color: #472622;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 999;
+}
+@media screen and (max-width: 800px) {
+  .header__menu__closer {
+    width: 12vw;
+    height: 12vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header__menu__closer {
+    display: block;
+  }
+}
+
+.header__mask {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .header__mask {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* ============================= HEADER ============================= */
