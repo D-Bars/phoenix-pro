@@ -195,6 +195,7 @@ body {
   overflow: hidden;
   overflow-y: auto;
   background-color: #FFF;
+  min-height: 300vh;
 }
 
 a {
@@ -260,13 +261,19 @@ html{
 
 /* ============================= HEADER ============================= */
 
-.header__line {
+#header__line {
+  position: fixed;
   padding: 0.3vw 2.5%;
   background-color: $color2;
-  transition: .4s;
+  transform: translateY(-300px);
+  transition: .6s;
 
   @include box(100%, 2.5%);
   @include flex__box(row, center, space-between);
+
+  @media screen and (max-width: 800px) {
+    transform: translateY(0px);
+  }
 }
 
 .header__logo__wrapper {

@@ -11,7 +11,7 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <header>
-        <div class="header__line">
+        <div id="header__line">
             <div class="header__logo__wrapper">
                 <a href="<?php echo home_url(); ?>">
                     <?php
