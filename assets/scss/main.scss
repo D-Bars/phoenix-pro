@@ -261,9 +261,9 @@ html{
 
 /* ============================= HEADER ============================= */
 
-#header__line {
+.header__line {
   position: fixed;
-  padding: 0.3vw 2.5%;
+  padding: 0.2vw 2.5%;
   background-color: $color2;
   transform: translateY(-300px);
   transition: .6s;
@@ -273,15 +273,37 @@ html{
 
   @media screen and (max-width: 800px) {
     transform: translateY(0px);
+    width: 95%;
+    padding: 0.5vw 2.5%;
   }
 }
 
+.header__background{
+  background-color: #FFF;
+}
+
 .header__logo__wrapper {
-  @include img_box(13%);
+  @include img_box(18%, 10vh);
+  transform: translateX(0vw);
+  transition: .6s;
 
   @media screen and (max-width: 800px) {
     width: 50%;
+    height: auto;
   }
+
+  & img{
+    display: flex;
+
+    @media screen and (max-width: 800px) {
+      height: 10vh;
+    }
+  }
+}
+
+.header__logo__hide{
+  transform: translateX(-50vw);
+  transition: .6s;
 }
 
 .logo__name {
@@ -289,7 +311,7 @@ html{
 }
 
 .header__menu__wrapper {
-  @include box(40%, 1.5%);
+  @include box(80%, 1.5%);
 
   @media screen and (max-width: 800px) {
     width: 50%;
@@ -334,8 +356,9 @@ html{
 
 .header__lang__menu__box {
   width: 100%;
+  gap: 5vw;
 
-  @include flex__box(row, center, space-between);
+  @include flex__box(row, center, flex-end);
 
   @media screen and (max-width: 800px) {
     position: relative;
@@ -355,9 +378,8 @@ html{
   margin: 0;
   gap: 1vw;
 
-  @include box(100%);
   @include flex__box(row, center);
-  @include text(120%, 600, $fontColor);
+  @include text(140%, 800, $fontColor);
 
   @media screen and (max-width: 800px) {
     order: 2;
@@ -369,13 +391,12 @@ html{
   & li {
     position: relative;
     top: 0;
-    text-shadow: 0px 0px 1px $fontColor;
     transition: .4s;
 
     &:hover {
       top: -0.1vw;
       color: $color3;
-      text-shadow: 1px 8px 8px $fontColor;
+      text-shadow: 1px 8px 8px $color3;
     }
   }
 }
@@ -384,7 +405,7 @@ html{
   gap: 0.5vw;
   line-height: 1;
 
-  @include flex__box(inline-flex, center);
+  @include flex__box(row, center);
   @include text(120%, 600);
 
   @media screen and (max-width: 800px) {

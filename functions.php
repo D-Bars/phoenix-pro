@@ -9,12 +9,7 @@ add_action('wp_enqueue_scripts', function(){
 });
 
 add_action('after_setup_theme', function(){
-    add_theme_support('custom-logo', array(
-        'height' => 102,
-        'width' => 289,
-        'flex-height' => true,
-        'flex-width'  => true,
-    ));
+    add_theme_support('custom-logo');
     load_theme_textdomain('firm', get_template_directory() . '/languages');
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');

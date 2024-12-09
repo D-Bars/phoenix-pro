@@ -11,19 +11,19 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <header>
-        <div id="header__line">
+        <div class="header__line">
             <div class="header__logo__wrapper">
-                <a href="<?php echo home_url(); ?>">
-                    <?php
-                    if (function_exists('the_custom_logo') && has_custom_logo()) {
-                        the_custom_logo();
-                    } else {
-                        ?>
-                        <div class="logo__name"><?php bloginfo('name'); ?></div>
-                        <?php
-                    }
+                <?php
+                if (function_exists('the_custom_logo') && has_custom_logo()) {
+                    the_custom_logo();
+                } else {
                     ?>
-                </a>
+                    <a href="<?php echo home_url(); ?>">
+                        <div class="logo__name"><?php bloginfo('name'); ?></div>
+                    </a>
+                    <?php
+                }
+                ?>
             </div>
             <nav class="header__menu__wrapper">
                 <div class="burger__menu"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/burger.png"

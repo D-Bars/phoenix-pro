@@ -54,18 +54,19 @@ jQuery(document).ready(function ($) {
 
     //header line show/hide to scroll
     var lastScroll = 0;
-    const headerLine = $('#header__line');
+    const headerLine = $('.header__line');
+    const headerLogoWrapper = $('.header__logo__wrapper');
     const mql = window.matchMedia("(min-width: 800px)");
 
     const toggleScrollHandler = (mql) => {
         if (mql.matches) {
-            window.addEventListener('scroll', handleScroll);
+            window.addEventListener('scroll', handleScrollPC);
         } else {
-            window.removeEventListener('scroll', handleScroll);
+            window.addEventListener('scroll', handleScrollMobile);
         }
     };
 
-    const handleScroll = () => {
+    const handleScrollPC = () => {
         let scrollTop = window.scrollY;
         if (scrollTop > lastScroll) {
             headerLine.css('transform', 'translateY(0)');
@@ -73,6 +74,17 @@ jQuery(document).ready(function ($) {
             headerLine.css('transform', 'translateY(-300px)');
         }
     };
+
+    const handleScrollMobile = () => {
+        let scrollTop = window.scrollY;
+        if (scrollTop > lastScroll) {
+            headerLine.addClass('header__background');
+            headerLogoWrapper.addClass('header__logo__hide');
+        } else {
+            headerLine.removeClass('header__background');
+            headerLogoWrapper.removeClass('header__logo__hide');
+        }
+    }
 
     toggleScrollHandler(mql);
 
