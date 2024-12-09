@@ -46,4 +46,35 @@
                 </div>
             </nav>
         </div>
+        <?php
+        global $theme__options;
+        ?>
+        <div class="header__center">
+            <div class="header__center__wrapper__img">
+                <?php if($theme__options['header__mask']): echo '<div class="header__center__mask__img"></div>' ?>
+                <?php endif; ?>
+                <?php
+                if ($theme__options['header__image']):
+                    echo '<img src="' . esc_url($theme__options['header__image']) . '" alt="HeaderImg">'
+                ?>
+                <?php endif; ?>
+            </div>
+            <div class="header__center__content">
+                <?php 
+                if($theme__options['header__title']): 
+                    echo '<h1 class="header__center__title">' . __('' . $theme__options['header__title'] . '', 'firm') . '</h1>'
+                ?>
+                <?php endif; ?>
+                <?php 
+                if($theme__options['header__description']): 
+                    echo '<div class="header__center__description">' . __('' . $theme__options['header__description'] . '', 'firm') . '</div>'
+                ?>
+                <?php endif; ?>
+                <div class="header__center__btn">
+                    <i class="fa-regular fa-lightbulb"></i>
+                    <span><?php _e('Связаться', 'firm'); ?></span>
+                    <i class="fa-regular fa-lightbulb"></i>
+                </div>
+            </div>
+        </div>
     </header>
