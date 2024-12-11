@@ -4,12 +4,12 @@
 
 // ПЕРЕМЕННЫЕ 
 $color1: #797878;
-$color2: #F57B1D;
+$color2: #f57b1d;
 $color3: #f5c582;
 $fontColor: #000;
 $font1: 'Montserrat';
 $font_size: 1.1vw;
-$mfont_size: 6vw;
+$mfont_size: 5.8vw;
 // ПЕРЕМЕННЫЕ 
 
 // МИКСИНЫ
@@ -123,7 +123,7 @@ $mfont_size: 6vw;
     box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.8);
     background: url(../img/close.png), $color3;
     background-size: 70% 70%;
-    background-color: $color3;
+    background-color: $color1;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 999;
@@ -143,6 +143,55 @@ $mfont_size: 6vw;
     flex-direction: $direction;
     align-items: $align_items;
     justify-content: $justify_content;
+  }
+}
+
+.custom__btn {
+  padding: 1vw 2.5%;
+  border: 2px solid #FFF;
+  background-color: rgba(#000, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .4s;
+
+  @include flex__box(row, center, space-between);
+
+  @media screen and (max-width: 800px) {
+    padding: 2vw 4%;
+  }
+
+  & i {
+    font-size: 1vw;
+    color: #FFF;
+    transition: .4s;
+
+    @media screen and (max-width: 800px) {
+      font-size: 6vw;
+    }
+  }
+
+  & span {
+    padding: 0 2vw;
+    transition: .4s;
+
+    @include text(130%, 800, #FFF);
+
+    @media screen and (max-width: 800px) {
+      padding: 0 3vw;
+    }
+  }
+
+  &:hover {
+    background-color: $color2;
+
+    & i {
+      text-shadow: 0px -4px 8px $color3;
+      font-weight: 800;
+    }
+
+    & span {
+      text-shadow: 0px 0px 5px #FFF;
+    }
   }
 }
 
@@ -253,7 +302,7 @@ nav {
   justify-content: center;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -279,7 +328,7 @@ html{
   }
 }
 
-.header__background{
+.header__background {
   background-color: rgba($color2, 0);
 }
 
@@ -293,7 +342,7 @@ html{
     height: auto;
   }
 
-  & img{
+  & img {
     display: flex;
 
     @media screen and (max-width: 800px) {
@@ -302,7 +351,7 @@ html{
   }
 }
 
-.header__logo__hide{
+.header__logo__hide {
   transform: translateX(-51vw);
   transition: .6s;
 }
@@ -364,7 +413,7 @@ html{
   @media screen and (max-width: 800px) {
     position: relative;
     width: 95%;
-    background-color: $color2;
+    background-color: $color1;
     flex-direction: column;
     align-items: center;
     border-radius: 0 0 15px 15px;
@@ -455,7 +504,7 @@ html{
   }
 }
 
-.header__center{
+.header__center {
   position: relative;
   min-height: 100vh;
 
@@ -463,25 +512,40 @@ html{
   @include flex__box(column, flex-end, center);
 
   @media screen and (max-width: 800px) {
-    min-height: unset;
+    width: 95%;
+    padding: 10vh 2.5%;
+    padding-bottom: 0;
+    margin-bottom: 5vh;
   }
 }
 
-.header__center__wrapper__img{
+.header__center__wrapper__img {
   position: absolute;
   top: 0;
   left: 0;
-  
+
   @include img_box(100%, 100%);
+
+
+  @media screen and (max-width: 800px) {
+    height: 100%;
+
+    @include background_img('../img/header_center.jpg');
+
+    & img {
+      display: none;
+    }
+  }
+
 }
 
-.header__center__mask__img{
+.header__center__mask__img {
   background-color: rgba(#000, 0.5);
-  
-  @include img__mask(0.3,#000);
+
+  @include img__mask(0.3, #000);
 }
 
-.header__center__content{
+.header__center__content {
   position: relative;
   text-align: right;
   gap: 1.5vw;
@@ -489,56 +553,88 @@ html{
 
   @include box(45%);
   @include flex__box(column, flex-end);
+
+  @media screen and (max-width: 800px) {
+    text-align: center;
+    align-items: center;
+  }
 }
 
-.header__center__title{
+.header__center__title {
   letter-spacing: 5px;
   line-height: 0.9;
 
   @include text(230%, 800, #FFF, 'ROBOTTO');
+
+  @media screen and (max-width: 800px) {
+    text-align: left;
+  }
 }
 
-.header__center__description{
+.header__center__description {
   @include text(110%, 600, #FFF);
   @include box(90%);
 }
 
-.header__center__btn{
-  padding: 1vw 2.5%;
-  border: 2px solid #FFF;
-  background-color: rgba(#000, 0.3);
-  border-radius: 10px;
+.header__center__btn {
   margin-top: 2vw;
-  cursor: pointer;
-  transition: .4s;
 
-  @include flex__box(row, center, space-between);
-
-  & i{
-    font-size: 1vw;
-    color: #FFF;
-    transition: .4s;
-  }
-
-  & span{
-    padding: 0 2vw;
-    transition: .4s;
-
-    @include text(130%, 800, #FFF);
-  }
-
-  &:hover{
-    background-color: $color2;
-
-    & i{
-      text-shadow: 0px -4px 8px $color3;
-      font-weight: 800;
-    }
-
-    & span{
-      text-shadow: 0px 0px 5px #FFF;
-    }
-  }
+  @extend .custom__btn;
 }
 
 /* ============================= HEADER ============================= */
+
+
+/* ============================= ADVANTAGES ============================= */
+
+.advantages__block{
+  background-color: $color1;
+
+  @include box(100%, 2.5%);
+  @include flex__box(row, center, space-between);
+}
+
+.advantages__item{
+  position: relative;
+  padding-bottom: 5vw;
+  border-radius: 50%;
+  
+  @include box(23%);
+  @include flex__box(column, center, center);
+}
+
+.a{
+  background-color: #FFF;
+}
+
+.advantages__lamp__wrapper{
+  position: absolute;
+  top: 0;
+  
+  @include img_box(10vw, 10vh);
+
+  & img{
+    filter: brightness(0);
+    transition: .4s;
+  }
+}
+
+.advantages__item__content__box{
+  border-radius: 10px;
+  outline: 1px solid #000;
+  //box-shadow: 0px 7px 20px 10px $color2;
+  padding: 1vw 2.5%;
+  gap: 1vw;
+
+  @include box(100%, 2.5%, auto, 15vh);
+  @include flex__box(column, center)
+}
+
+/* заменить в области преимуществ курсор на фонарик, 
+сделать класс для автоматического перелистования
+менять лампочку через брайтнесс
+размытие "фонарика"
+эффект свечения от лампы (лучи)?
+*/
+
+/* ============================= ADVANTAGES ============================= */

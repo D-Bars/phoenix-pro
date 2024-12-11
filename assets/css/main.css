@@ -1,3 +1,64 @@
+@charset "UTF-8";
+.custom__btn, .header__center__btn {
+  padding: 1vw 2.5%;
+  border: 2px solid #FFF;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.custom__btn, .header__center__btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 800px) {
+  .custom__btn, .header__center__btn {
+    padding: 2vw 4%;
+  }
+}
+.custom__btn i, .header__center__btn i {
+  font-size: 1vw;
+  color: #FFF;
+  transition: 0.4s;
+}
+@media screen and (max-width: 800px) {
+  .custom__btn i, .header__center__btn i {
+    font-size: 6vw;
+  }
+}
+.custom__btn span, .header__center__btn span {
+  padding: 0 2vw;
+  transition: 0.4s;
+}
+.custom__btn span, .header__center__btn span {
+  font-size: 169%;
+  font-family: "Montserrat";
+  font-weight: 800;
+  color: #FFF;
+}
+@media screen and (max-width: 800px) {
+  .custom__btn span, .header__center__btn span {
+    font-size: 7.54vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .custom__btn span, .header__center__btn span {
+    padding: 0 3vw;
+  }
+}
+.custom__btn:hover, .header__center__btn:hover {
+  background-color: #f57b1d;
+}
+.custom__btn:hover i, .header__center__btn:hover i {
+  text-shadow: 0px -4px 8px #f5c582;
+  font-weight: 800;
+}
+.custom__btn:hover span, .header__center__btn:hover span {
+  text-shadow: 0px 0px 5px #FFF;
+}
+
 /* BASIC */
 @font-face {
   font-family: "Montserrat";
@@ -196,7 +257,7 @@ html {
 }
 @media screen and (max-width: 800px) {
   .logo__name {
-    font-size: 9vw;
+    font-size: 8.7vw;
   }
 }
 
@@ -269,7 +330,7 @@ html {
   .header__lang__menu__box {
     position: relative;
     width: 95%;
-    background-color: #F57B1D;
+    background-color: #797878;
     flex-direction: column;
     align-items: center;
     border-radius: 0 0 15px 15px;
@@ -298,7 +359,7 @@ html {
 }
 @media screen and (max-width: 800px) {
   .header__menu__items__box {
-    font-size: 8.4vw;
+    font-size: 8.12vw;
   }
 }
 @media screen and (max-width: 800px) {
@@ -316,8 +377,8 @@ html {
 }
 .header__menu__items__box li:hover {
   top: -0.1vw;
-  color: #F57B1D;
-  text-shadow: 1px 8px 8px #F57B1D;
+  color: #f57b1d;
+  text-shadow: 1px 8px 8px #f57b1d;
 }
 
 .header__lang__box {
@@ -338,7 +399,7 @@ html {
 }
 @media screen and (max-width: 800px) {
   .header__lang__box {
-    font-size: 7.2vw;
+    font-size: 6.96vw;
   }
 }
 @media screen and (max-width: 800px) {
@@ -357,7 +418,7 @@ html {
 }
 @media screen and (max-width: 800px) {
   .header__lang__box .active__lang {
-    font-size: 7.8vw;
+    font-size: 7.54vw;
   }
 }
 @media screen and (max-width: 800px) {
@@ -376,7 +437,7 @@ html {
 }
 @media screen and (max-width: 800px) {
   .header__lang__box span {
-    font-size: 7.8vw;
+    font-size: 7.54vw;
   }
 }
 
@@ -394,7 +455,7 @@ html {
   box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.8);
   background: url(../img/close.png), #f5c582;
   background-size: 70% 70%;
-  background-color: #f5c582;
+  background-color: #797878;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 999;
@@ -451,7 +512,10 @@ html {
 }
 @media screen and (max-width: 800px) {
   .header__center {
-    min-height: unset;
+    width: 95%;
+    padding: 10vh 2.5%;
+    padding-bottom: 0;
+    margin-bottom: 5vh;
   }
 }
 
@@ -478,6 +542,27 @@ html {
     display: flex;
     flex-direction: column;
     flex-grow: -1;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header__center__wrapper__img {
+    height: 100%;
+  }
+  .header__center__wrapper__img {
+    background: url("../img/header_center.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+}
+@media screen and (max-width: 800px) and (max-width: 800px) {
+  .header__center__wrapper__img {
+    background-size: auto 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header__center__wrapper__img img {
+    display: none;
   }
 }
 
@@ -519,6 +604,12 @@ html {
   align-items: flex-end;
   justify-content: unset;
 }
+@media screen and (max-width: 800px) {
+  .header__center__content {
+    text-align: center;
+    align-items: center;
+  }
+}
 
 .header__center__title {
   letter-spacing: 5px;
@@ -532,7 +623,12 @@ html {
 }
 @media screen and (max-width: 800px) {
   .header__center__title {
-    font-size: 13.8vw;
+    font-size: 13.34vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header__center__title {
+    text-align: left;
   }
 }
 
@@ -544,7 +640,7 @@ html {
 }
 @media screen and (max-width: 800px) {
   .header__center__description {
-    font-size: 6.6vw;
+    font-size: 6.38vw;
   }
 }
 .header__center__description {
@@ -562,49 +658,122 @@ html {
 }
 
 .header__center__btn {
-  padding: 1vw 2.5%;
-  border: 2px solid #FFF;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
   margin-top: 2vw;
-  cursor: pointer;
-  transition: 0.4s;
 }
-.header__center__btn {
+
+/* ============================= HEADER ============================= */
+/* ============================= ADVANTAGES ============================= */
+.advantages__block {
+  background-color: #797878;
+}
+.advantages__block {
+  width: 95%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  margin-top: 0;
+  height: auto;
+}
+@media screen and (max-width: 800px) {
+  .advantages__block {
+    width: 100%;
+    padding: 0;
+  }
+}
+.advantages__block {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.header__center__btn i {
-  font-size: 1vw;
-  color: #FFF;
-  transition: 0.4s;
+
+.advantages__item {
+  position: relative;
+  padding-bottom: 5vw;
+  border-radius: 50%;
 }
-.header__center__btn span {
-  padding: 0 2vw;
-  transition: 0.4s;
-}
-.header__center__btn span {
-  font-size: 169%;
-  font-family: "Montserrat";
-  font-weight: 800;
-  color: #FFF;
+.advantages__item {
+  width: 23%;
+  padding-left: 0%;
+  padding-right: 0%;
+  margin-top: 0;
+  height: auto;
 }
 @media screen and (max-width: 800px) {
-  .header__center__btn span {
-    font-size: 7.8vw;
+  .advantages__item {
+    width: 100%;
+    padding: 0;
   }
 }
-.header__center__btn:hover {
-  background-color: #F57B1D;
-}
-.header__center__btn:hover i {
-  text-shadow: 0px -4px 8px #f5c582;
-  font-weight: 800;
-}
-.header__center__btn:hover span {
-  text-shadow: 0px 0px 5px #FFF;
+.advantages__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ============================= HEADER ============================= */
+.a {
+  background-color: #FFF;
+}
+
+.advantages__lamp__wrapper {
+  position: absolute;
+  top: 0;
+}
+.advantages__lamp__wrapper {
+  width: 10vw;
+  height: 10vh;
+  outline: unset;
+  outline-offset: -2px;
+}
+.advantages__lamp__wrapper img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .advantages__lamp__wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: -1;
+  }
+}
+.advantages__lamp__wrapper img {
+  filter: brightness(0);
+  transition: 0.4s;
+}
+
+.advantages__item__content__box {
+  border-radius: 10px;
+  outline: 1px solid #000;
+  padding: 1vw 2.5%;
+  gap: 1vw;
+}
+.advantages__item__content__box {
+  width: 95%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  margin-top: 15vh;
+  height: auto;
+}
+@media screen and (max-width: 800px) {
+  .advantages__item__content__box {
+    width: 100%;
+    padding: 0;
+  }
+}
+.advantages__item__content__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: unset;
+}
+
+/* заменить в области преимуществ курсор на фонарик, 
+сделать класс для автоматического перелистования
+менять лампочку через брайтнесс
+размытие "фонарика"
+эффект свечения от лампы (лучи)?
+*/
+/* ============================= ADVANTAGES ============================= */
