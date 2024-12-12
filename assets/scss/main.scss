@@ -4,7 +4,7 @@
 
 // ПЕРЕМЕННЫЕ 
 $color1: #797878;
-$color2: #f57b1d;
+$color2: #f5c582;
 $color3: #f5c582;
 $fontColor: #000;
 $font1: 'Montserrat';
@@ -589,6 +589,7 @@ html {
 
 .advantages__block{
   background-color: $color1;
+  border-top: 5px solid #000;
 
   @include box(100%, 2.5%);
   @include flex__box(row, center, space-between);
@@ -597,44 +598,68 @@ html {
 .advantages__item{
   position: relative;
   padding-bottom: 5vw;
-  border-radius: 50%;
   
   @include box(23%);
   @include flex__box(column, center, center);
 }
 
-.a{
-  background-color: #FFF;
-}
-
 .advantages__lamp__wrapper{
-  position: absolute;
+  position: relative;
   top: 0;
+  gap: 1vw;
   
   @include img_box(10vw, 10vh);
+  @include flex__box(column, center);
 
   & img{
-    filter: brightness(0);
-    transition: .4s;
+    filter: brightness(1);
+    transition: .3s;
   }
+}
+
+.rays__box{
+  position: absolute;
+  height: 2.5vw;
+  bottom: -2.5vw;
+  gap: 0.5vw;
+
+  @include flex__box(column, center);
+
+  & .ray{
+    background-color: $color2;
+    border-radius: 30px 0 30px 0;
+    filter: blur(1.5px);
+    box-shadow: 0 0 5px 1px $color2;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        width: calc(#{20px} + #{20px} * #{$i - 1});
+        height: 0.2vw;
+        transition: calc(#{0.4s} + #{0.1s} * #{$i - 1});
+      }
+    }
+  }
+
 }
 
 .advantages__item__content__box{
   border-radius: 10px;
-  outline: 1px solid #000;
-  //box-shadow: 0px 7px 20px 10px $color2;
+  background-color: $color2;
+  outline: 3px solid #000;
+  box-shadow: 4px 7px 20px 10px #000;
   padding: 1vw 2.5%;
+  transition: .6s;
   gap: 1vw;
+  color: #FFF;
 
-  @include box(100%, 2.5%, auto, 15vh);
+  @include box(100%, 2.5%, auto, 8vh);
   @include flex__box(column, center)
 }
 
-/* заменить в области преимуществ курсор на фонарик, 
+/*
 сделать класс для автоматического перелистования
 менять лампочку через брайтнесс
-размытие "фонарика"
-эффект свечения от лампы (лучи)?
+продумать переход ручной от итема к итему !
 */
 
 /* ============================= ADVANTAGES ============================= */
