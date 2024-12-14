@@ -1,41 +1,37 @@
-<?php get_header();  ?>
+<?php get_header(); ?>
 
-<div class="advantages__block">
-    <div class="advantages__item active">
-        <div class="advantages__lamp__wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/lamp.png" alt="AdvantagesLamp">
-            <div class="rays__box">
-                <div class="ray ray__first"></div>
-                <div class="ray ray__second"></div>
-                <div class="ray ray__third"></div>
+<?php
+global $post;
+$advantages = get_posts(array(
+    'post_type' => 'advantages',
+    'numberposts' => 4
+));
+?>
+<?php if ($advantages): ?>
+    <div class="advantages__block">
+        <?php 
+            $i = 0;
+            foreach($advantages as $advantage):
+                setup_postdata($advantage); 
+                $advantageID = $advantage->ID;
+        ?>
+        <div class="advantages__item <?php echo (!$i) ? 'adv__active' : ''; ?>">
+            <div class="advantages__lamp__wrapper">
+                <img class="<?php echo (!$i) ? 'lightbulb__active' : ''; ?>" src="<?php echo get_template_directory_uri(); ?>/assets/img/lamp.png"
+                    alt="AdvantagesLamp">
+                <div class="rays__box">
+                    <div class="ray ray__first <?php echo (!$i) ? 'ray__active' : ''; ?>"></div>
+                    <div class="ray ray__second <?php echo (!$i) ? 'ray__active' : ''; ?>"></div>
+                    <div class="ray ray__third <?php echo (!$i) ? 'ray__active' : ''; ?>"></div>
+                </div>
+            </div>
+            <div class="advantages__item__content__box <?php echo (!$i) ? 'content__box__active' : ''; ?>">
+                <div class="advantages__item__title"><?php the__localize__title($advantageID); ?></div>
+                <div class="advantages__item__subtitle"><?php the__localize__content($advantageID); ?></div>
             </div>
         </div>
-        <div class="advantages__item__content__box">
-            <div class="advantages__item__title">1</div>
-            <div class="advantages__item__subtitle">2</div>
-        </div>
+        <?php $i+=1; endforeach; ?>
     </div>
-    <div class="advantages__item">
-        <div class="advantages__lamp__wrapper"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/lamp.png" alt="AdvantagesLamp"></div>
-        <div class="advantages__item__content__box">
-            <div class="advantages__item__title">1</div>
-            <div class="advantages__item__subtitle">2</div>
-        </div>
-    </div>
-    <div class="advantages__item">
-        <div class="advantages__lamp__wrapper"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/lamp.png" alt="AdvantagesLamp"></div>
-        <div class="advantages__item__content__box">
-            <div class="advantages__item__title">1</div>
-            <div class="advantages__item__subtitle">2</div>
-        </div>
-    </div>
-    <div class="advantages__item">
-        <div class="advantages__lamp__wrapper"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/lamp.png" alt="AdvantagesLamp"></div>
-        <div class="advantages__item__content__box">
-            <div class="advantages__item__title">1</div>
-            <div class="advantages__item__subtitle">2</div>
-        </div>
-    </div>
-</div>
+<?php endif; ?>
 
-<?php get_footer();  ?>
+<?php get_footer(); ?>

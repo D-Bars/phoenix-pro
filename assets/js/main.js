@@ -52,6 +52,14 @@ jQuery(document).ready(function ($) {
     }
     triggersMenuItems();
 
+    class Advantages {
+        constructor(collection){
+            
+            console.log(collection);
+        }
+    }
+    const collectionAdv = new Advantages($('.advantages__block').find('.advantages__item'));
+
     //header line show/hide to scroll
     var lastScroll = 0;
     const headerLine = $('.header__line');
