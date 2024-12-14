@@ -55,7 +55,33 @@ jQuery(document).ready(function ($) {
     class Advantages {
         constructor(collection){
             
-            console.log(collection);
+            
+        }
+
+        getActiveItem (collection) {
+            return collection.filter('.adv__active');
+        }
+
+        getAnimatedEl(obj){
+            let animatedElements = {};
+
+            animatedElements["item"] = obj;
+            animatedElements["lightbulb"] = obj.find('img');
+            animatedElements["rays"] = obj.find('.rays__box').find('.ray');
+            animatedElements["content_box"] = obj.find('.advantages__item__content__box');
+            
+            return animatedElements;
+        }
+
+        getClassesToAnimate(){
+            let animatedClasses = {};
+
+            animatedElements["item"] = 'adv__active';
+            animatedElements["lightbulb"] = 'lightbulb__active';
+            animatedElements["rays"] = 'ray__active';
+            animatedElements["content_box"] = 'content__box__active';
+
+            return animatedClasses;
         }
     }
     const collectionAdv = new Advantages($('.advantages__block').find('.advantages__item'));

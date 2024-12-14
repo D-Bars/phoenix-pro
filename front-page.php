@@ -20,9 +20,9 @@ $advantages = get_posts(array(
                 <img class="<?php echo (!$i) ? 'lightbulb__active' : ''; ?>" src="<?php echo get_template_directory_uri(); ?>/assets/img/lamp.png"
                     alt="AdvantagesLamp">
                 <div class="rays__box">
-                    <div class="ray ray__first <?php echo (!$i) ? 'ray__active' : ''; ?>"></div>
-                    <div class="ray ray__second <?php echo (!$i) ? 'ray__active' : ''; ?>"></div>
-                    <div class="ray ray__third <?php echo (!$i) ? 'ray__active' : ''; ?>"></div>
+                    <div class="ray <?php echo (!$i) ? 'ray__active' : ''; ?>"></div>
+                    <div class="ray <?php echo (!$i) ? 'ray__active' : ''; ?>"></div>
+                    <div class="ray <?php echo (!$i) ? 'ray__active' : ''; ?>"></div>
                 </div>
             </div>
             <div class="advantages__item__content__box <?php echo (!$i) ? 'content__box__active' : ''; ?>">
