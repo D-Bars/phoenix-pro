@@ -57,41 +57,57 @@ jQuery(document).ready(function ($) {
             this.collection = collection;
             this.firstItem = this.collection.first();
 
-            const intervalID = setInterval(() => {
-                let newActiveItem = this.nextItem();
-                this.removeActiveClass(this.getActiveItem());
-                console.log(newActiveItem);
-                if (newActiveItem.length) {
-                    this.setActiveItem(newActiveItem);
-                } else {
-                    this.setActiveItem(this.firstItem);
-                }
-            }, 5000);
+            this.setCarousel();
+            this.addListeners();
         }
 
         getActiveItem() {
             let activeItem = this.collection.filter('.adv__active');
-            if(activeItem.length){
+            if (activeItem.length) {
                 return activeItem;
-            }else{
+            } else {
                 return activeItem = null;
             }
         }
 
         setActiveItem(obj) {
             obj.addClass('adv__active');
+            console.log(obj);
         }
 
         nextItem() {
-            if(this.getActiveItem()){
+            if (this.getActiveItem()) {
                 return this.getActiveItem().next();
-            }else{
+            } else {
                 return null;
             }
         }
 
         removeActiveClass() {
             this.getActiveItem().removeClass('adv__active');
+        }
+
+        addListeners() {
+            this.collection.on('mouseenter', (event) => {
+                clearInterval(this.intervalID);
+                this.removeActiveClass();
+                this.setActiveItem($(event.currentTarget));
+            })
+            this.collection.on('mouseleave', (event) => {
+                this.setCarousel();
+            })
+        }
+
+        setCarousel() {
+            this.intervalID = setInterval(() => {
+                let newActiveItem = this.nextItem();
+                this.removeActiveClass();
+                if (newActiveItem.length) {
+                    this.setActiveItem(newActiveItem);
+                } else {
+                    this.setActiveItem(this.firstItem);
+                }
+            }, 3500);
         }
     }
     const collectionAdv = new Advantages($('.advantages__block').find('.advantages__item'));
