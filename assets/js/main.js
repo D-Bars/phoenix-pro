@@ -53,35 +53,48 @@ jQuery(document).ready(function ($) {
     triggersMenuItems();
 
     class Advantages {
-        constructor(collection){
-            
-            
+        constructor(collection) {
+            this.collection = collection;
+            this.firstItem = this.collection.first();
+
+            const intervalID = setInterval(() => {
+                let newActiveItem = this.nextItem();
+                this.removeActiveClass(this.getActiveItem());
+                console.log(newActiveItem);
+                if (newActiveItem.length) {
+                    // console.log(1);
+                    this.setActiveItem(newActiveItem);
+                } else {
+                    // console.log(0);
+                    this.setActiveItem(this.firstItem);
+                }
+            }, 5000);
         }
 
-        getActiveItem (collection) {
-            return collection.filter('.adv__active');
+        getActiveItem() {
+            let activeItem = this.collection.filter('.adv__active');
+            if(activeItem){
+                return activeItem;
+            }else{
+                return activeItem = null;
+            }
         }
 
-        getAnimatedEl(obj){
-            let animatedElements = {};
-
-            animatedElements["item"] = obj;
-            animatedElements["lightbulb"] = obj.find('img');
-            animatedElements["rays"] = obj.find('.rays__box').find('.ray');
-            animatedElements["content_box"] = obj.find('.advantages__item__content__box');
-            
-            return animatedElements;
+        setActiveItem(obj) {
+            obj.addClass('adv__active');
         }
 
-        getClassesToAnimate(){
-            let animatedClasses = {};
+        nextItem() {
+            if(this.getActiveItem()){
+                return this.getActiveItem().next();
+            }else{
+                return null;
+            }
+        }
 
-            animatedElements["item"] = 'adv__active';
-            animatedElements["lightbulb"] = 'lightbulb__active';
-            animatedElements["rays"] = 'ray__active';
-            animatedElements["content_box"] = 'content__box__active';
-
-            return animatedClasses;
+        removeActiveClass() {
+            let activeClass = this.getActiveItem();
+            activeClass.removeClass('adv__active');
         }
     }
     const collectionAdv = new Advantages($('.advantages__block').find('.advantages__item'));
@@ -122,5 +135,5 @@ jQuery(document).ready(function ($) {
 
     toggleScrollHandler(mql);
 
-    mql.addEventListener('scroll',toggleScrollHandler);
+    mql.addEventListener('scroll', toggleScrollHandler);
 });

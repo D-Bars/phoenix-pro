@@ -744,7 +744,7 @@ html {
 }
 .advantages__lamp__wrapper img {
   filter: brightness(0);
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .rays__box {
@@ -769,22 +769,22 @@ html {
 .rays__box .ray:nth-child(1) {
   width: calc(20px + 20px * 0);
   height: 0.2vw;
-  transition: calc(0.3s + 0.3s * 0);
+  transition: calc(0.5s + 0.6s * 0);
 }
 .rays__box .ray:nth-child(2) {
   width: calc(20px + 20px * 1);
   height: 0.2vw;
-  transition: calc(0.3s + 0.3s * 1);
+  transition: calc(0.5s + 0.6s * 1);
 }
 .rays__box .ray:nth-child(3) {
   width: calc(20px + 20px * 2);
   height: 0.2vw;
-  transition: calc(0.3s + 0.3s * 2);
+  transition: calc(0.5s + 0.6s * 2);
 }
 .rays__box .ray:nth-child(4) {
   width: calc(20px + 20px * 3);
   height: 0.2vw;
-  transition: calc(0.3s + 0.3s * 3);
+  transition: calc(0.5s + 0.6s * 3);
 }
 
 .advantages__item__content__box {
@@ -792,7 +792,7 @@ html {
   outline: 3px solid #000;
   padding: 1vw 2.5%;
   gap: 1vw;
-  transition: 0.6s;
+  transition: 0.8s;
   text-align: center;
 }
 .advantages__item__content__box {
@@ -815,6 +815,9 @@ html {
   justify-content: unset;
 }
 .advantages__item__content__box .advantages__item__title {
+  transition: 0.6s;
+}
+.advantages__item__content__box .advantages__item__title {
   font-size: 169%;
   font-family: "Montserrat";
   font-weight: 800;
@@ -824,6 +827,9 @@ html {
   .advantages__item__content__box .advantages__item__title {
     font-size: 7.54vw;
   }
+}
+.advantages__item__content__box .advantages__item__subtitle {
+  transition: 0.6s;
 }
 .advantages__item__content__box .advantages__item__subtitle {
   font-size: 121%;
@@ -837,17 +843,17 @@ html {
   }
 }
 
-.adv__active .lightbulb__active {
+.adv__active img {
   filter: brightness(1);
 }
-.adv__active .ray__active {
+.adv__active .ray {
   opacity: 1;
 }
-.adv__active .content__box__active {
+.adv__active .advantages__item__content__box {
   box-shadow: 4px 7px 20px 10px #000;
   background-color: #f5c582;
 }
-.adv__active .content__box__active .advantages__item__title, .adv__active .content__box__active .advantages__item__subtitle {
+.adv__active .advantages__item__content__box .advantages__item__title, .adv__active .advantages__item__content__box .advantages__item__subtitle {
   color: #FFF;
 }
 

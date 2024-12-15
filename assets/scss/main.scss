@@ -614,7 +614,7 @@ html {
 
   & img {
     filter: brightness(0);
-    transition: .3s;
+    transition: .4s;
   }
 }
 
@@ -637,7 +637,7 @@ html {
       &:nth-child(#{$i}) {
         width: calc(#{20px} + #{20px} * #{$i - 1});
         height: 0.2vw;
-        transition: calc(#{0.3s} + #{0.3s} * #{$i - 1});
+        transition: calc(#{0.5s} + #{0.6s} * #{$i - 1});
       }
     }
   }
@@ -648,31 +648,35 @@ html {
   outline: 3px solid #000;
   padding: 1vw 2.5%;
   gap: 1vw;
-  transition: .6s;
+  transition: .8s;
   text-align: center;
 
   @include box(100%, 2.5%, 10vw, 8vh);
   @include flex__box(column, center);
 
   & .advantages__item__title{
+    transition: .6s;
+    
     @include text(130%, 800);
   }
 
   & .advantages__item__subtitle{
+    transition: .6s;
+    
     @include text(110%, 600);
   }
 }
 
 .adv__active{
-  & .lightbulb__active {
+  & img {
     filter: brightness(1) ;
   }
 
-  & .ray__active {
+  & .ray {
     opacity: 1 ;
   }
 
-  & .content__box__active {
+  & .advantages__item__content__box {
     box-shadow: 4px 7px 20px 10px #000;
     background-color: $color2;
     
