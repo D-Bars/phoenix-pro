@@ -62,10 +62,8 @@ jQuery(document).ready(function ($) {
                 this.removeActiveClass(this.getActiveItem());
                 console.log(newActiveItem);
                 if (newActiveItem.length) {
-                    // console.log(1);
                     this.setActiveItem(newActiveItem);
                 } else {
-                    // console.log(0);
                     this.setActiveItem(this.firstItem);
                 }
             }, 5000);
@@ -73,7 +71,7 @@ jQuery(document).ready(function ($) {
 
         getActiveItem() {
             let activeItem = this.collection.filter('.adv__active');
-            if(activeItem){
+            if(activeItem.length){
                 return activeItem;
             }else{
                 return activeItem = null;
@@ -93,8 +91,7 @@ jQuery(document).ready(function ($) {
         }
 
         removeActiveClass() {
-            let activeClass = this.getActiveItem();
-            activeClass.removeClass('adv__active');
+            this.getActiveItem().removeClass('adv__active');
         }
     }
     const collectionAdv = new Advantages($('.advantages__block').find('.advantages__item'));
