@@ -9,28 +9,31 @@ $advantages = get_posts(array(
 ?>
 <?php if ($advantages): ?>
     <div class="advantages__block">
-        <?php 
-            $i = 0;
-            foreach($advantages as $advantage):
-                setup_postdata($advantage); 
-                $advantageID = $advantage->ID;
-        ?>
-        <div class="advantages__item <?php echo (!$i) ? 'adv__active' : ''; ?>">
-            <div class="advantages__lamp__wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/lamp.png"
-                    alt="AdvantagesLamp">
-                <div class="rays__box">
-                    <div class="ray"></div>
-                    <div class="ray"></div>
-                    <div class="ray"></div>
+        <?php
+        $i = 0;
+        foreach ($advantages as $advantage):
+            setup_postdata($advantage);
+            $advantageID = $advantage->ID;
+            ?>
+            <div class="advantages__item <?php echo (!$i) ? 'adv__active' : ''; ?>">
+                <div class="advantages__lamp__wrapper">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/lamp.png" alt="AdvantagesLamp">
+                    <div class="rays__box">
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                    </div>
+                </div>
+                <div class="advantages__item__content__box">
+                    <?php if (get_the_post_thumbnail($advantageID)): ?>
+                        <div class="advantages__item__img"><?php echo get_the_post_thumbnail($advantageID, 'large'); ?></div>
+                    <?php endif; ?>
+                    <div class="advantages__item__title"><?php the__localize__title($advantageID); ?></div>
+                    <div class="advantages__item__subtitle"><?php the__localize__content($advantageID); ?></div>
                 </div>
             </div>
-            <div class="advantages__item__content__box">
-                <div class="advantages__item__title"><?php the__localize__title($advantageID); ?></div>
-                <div class="advantages__item__subtitle"><?php the__localize__content($advantageID); ?></div>
-            </div>
-        </div>
-        <?php $i+=1; endforeach; ?>
+            <?php $i += 1; endforeach; ?>
+        <?php wp_reset_postdata(); ?>
     </div>
 <?php endif; ?>
 

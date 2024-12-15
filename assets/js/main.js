@@ -1,4 +1,42 @@
 jQuery(document).ready(function ($) {
+    const mql = window.matchMedia("(min-width: 800px)");
+
+    //header line show/hide to scroll
+    var lastScroll = 0;
+    const headerLine = $('.header__line');
+    const headerLogoWrapper = $('.header__logo__wrapper');
+
+    const toggleScrollHandler = (mql) => {
+        if (mql.matches) {
+            window.addEventListener('scroll', handleScrollPC);
+        } else {
+            window.addEventListener('scroll', handleScrollMobile);
+        }
+    };
+
+    const handleScrollPC = () => {
+        let scrollTop = window.scrollY;
+        if (scrollTop > lastScroll) {
+            headerLine.css('transform', 'translateY(0)');
+        } else {
+            headerLine.css('transform', 'translateY(-300px)');
+        }
+    };
+
+    const handleScrollMobile = () => {
+        let scrollTop = window.scrollY;
+        if (scrollTop > lastScroll) {
+            headerLine.addClass('header__background');
+            headerLogoWrapper.addClass('header__logo__hide');
+        } else {
+            headerLine.removeClass('header__background');
+            headerLogoWrapper.removeClass('header__logo__hide');
+        }
+    }
+
+    toggleScrollHandler(mql);
+
+    mql.addEventListener('scroll', toggleScrollHandler);
 
     class modalWindow {
         constructor(modalTrigger) {
@@ -72,7 +110,6 @@ jQuery(document).ready(function ($) {
 
         setActiveItem(obj) {
             obj.addClass('adv__active');
-            console.log(obj);
         }
 
         nextItem() {
@@ -110,43 +147,7 @@ jQuery(document).ready(function ($) {
             }, 3500);
         }
     }
-    const collectionAdv = new Advantages($('.advantages__block').find('.advantages__item'));
-
-    //header line show/hide to scroll
-    var lastScroll = 0;
-    const headerLine = $('.header__line');
-    const headerLogoWrapper = $('.header__logo__wrapper');
-    const mql = window.matchMedia("(min-width: 800px)");
-
-    const toggleScrollHandler = (mql) => {
-        if (mql.matches) {
-            window.addEventListener('scroll', handleScrollPC);
-        } else {
-            window.addEventListener('scroll', handleScrollMobile);
-        }
-    };
-
-    const handleScrollPC = () => {
-        let scrollTop = window.scrollY;
-        if (scrollTop > lastScroll) {
-            headerLine.css('transform', 'translateY(0)');
-        } else {
-            headerLine.css('transform', 'translateY(-300px)');
-        }
-    };
-
-    const handleScrollMobile = () => {
-        let scrollTop = window.scrollY;
-        if (scrollTop > lastScroll) {
-            headerLine.addClass('header__background');
-            headerLogoWrapper.addClass('header__logo__hide');
-        } else {
-            headerLine.removeClass('header__background');
-            headerLogoWrapper.removeClass('header__logo__hide');
-        }
+    if(mql.matches){
+        const collectionAdv = new Advantages($('.advantages__block').find('.advantages__item'));
     }
-
-    toggleScrollHandler(mql);
-
-    mql.addEventListener('scroll', toggleScrollHandler);
 });

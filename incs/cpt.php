@@ -36,7 +36,7 @@ add_action('init', function () {
                 'item_scheduled' => 'Публикация преимуществ запланирована.',
             ),
             'public' => true,
-            'supports' => array('title', 'editor'),
+            'supports' => array('title', 'editor', 'thumbnail'),
             'menu_icon' => 'dashicons-columns',
             'show_in_rest' => true,
         )

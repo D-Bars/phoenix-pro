@@ -514,8 +514,7 @@ html {
   @media screen and (max-width: 800px) {
     width: 95%;
     padding: 10vh 2.5%;
-    padding-bottom: 0;
-    margin-bottom: 5vh;
+    padding-bottom: 5vw;
   }
 }
 
@@ -593,12 +592,21 @@ html {
 
   @include box(100%, 2.5%);
   @include flex__box(row, flex-start, space-between);
+
+  @media screen and (max-width: 800px) {
+    width: 98%;
+    flex-direction: column;
+    border: unset;
+    gap: 1vw;
+    padding: 0vw 1%;
+  }
+
 }
 
 .advantages__item {
   position: relative;
   padding-bottom: 5vw;
-  
+
 
   @include box(23%, 0, 100%);
   @include flex__box(column, center, center);
@@ -611,6 +619,10 @@ html {
 
   @include img_box(10vw, 10vh);
   @include flex__box(column, center);
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 
   & img {
     filter: brightness(0);
@@ -625,6 +637,10 @@ html {
   gap: 0.5vw;
 
   @include flex__box(column, center);
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 
   & .ray {
     background-color: $color2;
@@ -655,42 +671,88 @@ html {
   @include box(100%, 2.5%, 10vw, 8vh);
   @include flex__box(column, center);
 
-  & .advantages__item__title{
+  @media screen and (max-width: 800px) {
+    width: 95%;
+    padding: 5vw 2.5%;
+    margin-top: unset;
+    outline: unset;
+    outline: 5px solid #000;
+    outline-offset: -5px;
+    align-items: center;
+    height: auto;
+    border-radius: unset;
+    gap: 5vw;
+  }
+
+  & .advantages__item__title {
     transition: .6s;
 
     @include text(130%, 800);
+
+    @media screen and (max-width: 800px) {
+      color: $color2;
+    }
   }
 
-  & .advantages__item__subtitle{
+  & .advantages__item__subtitle {
     transition: .6s;
 
     @include text(110%, 600);
+
+    @media screen and (max-width: 800px) {
+      color: #FFF;
+    }
   }
 }
 
-.adv__active{
-  & img {
-    filter: brightness(1) ;
+.advantages__item__img{
+  display: none;
+  
+  @include img_box(40%, 10vw);
+
+  @media screen and (max-width: 800px) {
+    display: flex;
+    width: 40%; 
+    margin-bottom: 3vw; 
+  }
+}
+
+.adv__active {
+  & > img {
+    filter: brightness(1);
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
 
   & .ray {
-    opacity: 1 ;
+    opacity: 1;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
 
   & .advantages__item__content__box {
     box-shadow: 4px 7px 20px 10px #000;
     background-color: $color2;
     
-    & .advantages__item__title, .advantages__item__subtitle{
+    @media screen and (max-width: 800px) {
+      box-shadow: unset;
+      background-color: unset;
+    }
+    
+    & .advantages__item__title, .advantages__item__subtitle  {
       color: #FFF;
+    }
+
+    & .advantages__item__title{
+      @media screen and (max-width: 800px) {
+        color: $color2;
+      }
     }
   }
 }
-
-/*
-сделать класс для автоматического перелистования
-менять лампочку через брайтнесс
-продумать переход ручной от итема к итему !
-*/
 
 /* ============================= ADVANTAGES ============================= */
