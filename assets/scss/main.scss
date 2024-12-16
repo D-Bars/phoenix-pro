@@ -718,7 +718,7 @@ html {
 }
 
 .adv__active {
-  & > img {
+  & .advantages__lamp__wrapper > img {
     filter: brightness(1);
 
     @media screen and (max-width: 800px) {
