@@ -5,7 +5,7 @@
 // ПЕРЕМЕННЫЕ 
 $color1: #797878;
 $color2: #f5c582;
-$color3: #f5c582;
+$color3: #000;
 $fontColor: #000;
 $font1: 'Montserrat';
 $font_size: 1.1vw;
@@ -605,8 +605,6 @@ html {
 
 .advantages__item {
   position: relative;
-  padding-bottom: 5vw;
-
 
   @include box(23%, 0, 100%);
   @include flex__box(column, center, center);
@@ -705,20 +703,20 @@ html {
   }
 }
 
-.advantages__item__img{
+.advantages__item__img {
   display: none;
-  
+
   @include img_box(40%, 10vw);
 
   @media screen and (max-width: 800px) {
     display: flex;
-    width: 40%; 
-    margin-bottom: 3vw; 
+    width: 40%;
+    margin-bottom: 3vw;
   }
 }
 
 .adv__active {
-  & .advantages__lamp__wrapper > img {
+  & .advantages__lamp__wrapper>img {
     filter: brightness(1);
 
     @media screen and (max-width: 800px) {
@@ -737,17 +735,18 @@ html {
   & .advantages__item__content__box {
     box-shadow: 4px 7px 20px 10px #000;
     background-color: $color2;
-    
+
     @media screen and (max-width: 800px) {
       box-shadow: unset;
       background-color: unset;
     }
-    
-    & .advantages__item__title, .advantages__item__subtitle  {
+
+    & .advantages__item__title,
+    .advantages__item__subtitle {
       color: #FFF;
     }
 
-    & .advantages__item__title{
+    & .advantages__item__title {
       @media screen and (max-width: 800px) {
         color: $color2;
       }
@@ -756,3 +755,52 @@ html {
 }
 
 /* ============================= ADVANTAGES ============================= */
+
+
+/* ============================= ABOUT__US ============================= */
+
+.about__us__block {
+  background-color: #797878;
+  padding: 5vw 0;
+
+  @include box(100%);
+  @include flex__box(row, stretch);
+}
+
+.about__us__content__box {
+  padding-top: 5vw;
+  gap: 3vw;
+
+  @include box(50%, 2.5%);
+  @include flex__box(column);
+
+  & h2 {
+    width: 4em;
+    padding-left: 5px;
+    border: 5px solid $color2;
+    border-top: unset;
+    border-right: unset;
+    border-radius: 10px;
+    @include text(180%, 800, #000);
+  }
+
+  & .about__us__text {
+    letter-spacing: 2px;
+    line-height: 1.5;
+
+    @include text(120%, 600, #000);
+  }
+}
+
+.about__us__wrapper__img {
+  min-height: 40vw;
+  border-radius: 10px 0 0 10px;
+
+  @include img_box(50%);
+
+  & img {
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+/* ============================= ABOUT__US ============================= */
