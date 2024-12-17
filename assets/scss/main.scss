@@ -190,7 +190,8 @@ $mfont_size: 5.8vw;
     }
 
     & span {
-      text-shadow: 0px 0px 5px #FFF;
+      text-shadow: 0px 0px 5px #000,
+                   0px 0px 10px #000;
     }
   }
 }
