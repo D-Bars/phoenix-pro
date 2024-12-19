@@ -40,7 +40,10 @@ $advantages = get_posts(array(
 <div class="about__us__block">
     <!-- design element -->
     <div class="about__us__content__box">
-        <h2>О нас</h2>
+        <h2>
+            <?php _e('О нас', 'firm'); ?>
+            <div class="h2__border"></div>
+        </h2>
         <?php
         if ($theme__options['about__us__text']):
             echo '<div class="about__us__text">' . __('' . $theme__options['about__us__text'] . '', 'firm') . '</div>'
@@ -50,7 +53,7 @@ $advantages = get_posts(array(
     <div class="about__us__wrapper__img">
         <?php if ($theme__options['about__us__image']):
             echo '<img src="' . esc_url($theme__options['about__us__image']) . '" alt="AboutUs">'
-        ?>
+                ?>
         <?php endif; ?>
     </div>
     <!-- design element -->

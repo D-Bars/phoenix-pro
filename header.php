@@ -36,9 +36,7 @@
                             <li class="header__menu__item"><a href="#"><?php _e('Контакты', 'firm'); ?></a></li>
                         </ul>
                         <div class="header__lang__box">
-                            <div class="active__lang">RU</div>
-                            <span>/</span>
-                            <div class="lang">PL</div>
+                            <?php echo do_shortcode('[language-switcher]'); ?>
                         </div>
                     </div>
                     <div class="header__menu__closer" closer></div>

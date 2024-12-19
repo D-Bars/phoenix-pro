@@ -380,66 +380,6 @@ html {
   text-shadow: 1px 8px 8px #f5c582;
 }
 
-.header__lang__box {
-  gap: 0.5vw;
-  line-height: 1;
-}
-.header__lang__box {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: unset;
-}
-.header__lang__box {
-  font-size: 144%;
-  font-family: "Montserrat";
-  font-weight: 600;
-  color: #000;
-}
-@media screen and (max-width: 800px) {
-  .header__lang__box {
-    font-size: 6.96vw;
-  }
-}
-@media screen and (max-width: 800px) {
-  .header__lang__box {
-    width: 100%;
-    order: 1;
-    font-size: 7vw;
-    justify-content: flex-start;
-  }
-}
-.header__lang__box .active__lang {
-  font-size: 169%;
-  font-family: "Montserrat";
-  font-weight: 800;
-  color: #000;
-}
-@media screen and (max-width: 800px) {
-  .header__lang__box .active__lang {
-    font-size: 7.54vw;
-  }
-}
-@media screen and (max-width: 800px) {
-  .header__lang__box .active__lang {
-    font-size: 9vw;
-  }
-}
-.header__lang__box span {
-  padding-top: 0.1vw;
-}
-.header__lang__box span {
-  font-size: 169%;
-  font-family: "Montserrat";
-  font-weight: 400;
-  color: #000;
-}
-@media screen and (max-width: 800px) {
-  .header__lang__box span {
-    font-size: 7.54vw;
-  }
-}
-
 .header__menu__closer {
   display: none;
 }
@@ -1001,12 +941,7 @@ html {
   justify-content: unset;
 }
 .about__us__content__box h2 {
-  width: 4em;
   padding-left: 5px;
-  border: 5px solid #f5c582;
-  border-top: unset;
-  border-right: unset;
-  border-radius: 10px;
 }
 .about__us__content__box h2 {
   font-size: 324%;
@@ -1018,6 +953,11 @@ html {
   .about__us__content__box h2 {
     font-size: 10.44vw;
   }
+}
+.about__us__content__box h2 .h2__border {
+  width: 1em;
+  border-bottom: 5px solid #f5c582;
+  border-radius: 10px;
 }
 .about__us__content__box .about__us__text {
   letter-spacing: 2px;
@@ -1064,3 +1004,43 @@ html {
 }
 
 /* ============================= ABOUT__US ============================= */
+/* ============================= Translate Press ============================= */
+#trp-floater-ls.trp-bottom-right {
+  display: none;
+}
+
+.header__lang__box .trp_language_switcher_shortcode {
+  display: flex;
+  justify-content: flex-end;
+}
+.header__lang__box .trp-language-switcher-container {
+  display: flex;
+  align-items: center;
+}
+.header__lang__box .trp-language-switcher-container:hover .trp-ls-shortcode-language {
+  all: unset;
+}
+.header__lang__box .trp-language-switcher {
+  width: 5vw;
+}
+.header__lang__box .trp-language-switcher .trp-ls-shortcode-language {
+  padding: unset;
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  overflow: unset;
+  visibility: unset;
+}
+.header__lang__box .trp-language-switcher > div {
+  background-color: unset;
+  border: unset;
+  background-image: unset;
+  background-position: unset;
+  background-repeat: unset;
+  background-size: unset;
+}
+.header__lang__box .trp-ls-shortcode-current-language {
+  display: none;
+}
+
+/* ============================= Translate Press ============================= */
