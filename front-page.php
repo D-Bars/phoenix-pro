@@ -42,7 +42,7 @@ $advantages = get_posts(array(
     <div class="about__us__content__box">
         <h2>
             <?php _e('О нас', 'firm'); ?>
-            <div class="h2__border"></div>
+            <div class="about__us__h2__border"></div>
         </h2>
         <?php
         if ($theme__options['about__us__text']):
@@ -57,6 +57,20 @@ $advantages = get_posts(array(
         <?php endif; ?>
     </div>
     <!-- design element -->
+</div>
+
+<div class="form__block">
+    <div class="form__wrapper__img"><div class="form__mask"></div><img src="<?php echo get_template_directory_uri(); ?>./assets/img/form__bckgr.jpg" alt=""></div>
+    <div class="form__content">
+        <div class="form__titles__box">
+            <div class="form__content__subtitle"><?php _e('We would love to know you', 'firm'); ?></div>
+            <h2>
+                <?php _e('GET IN TOUCH WITH US', 'firm'); ?>
+                <div class="form__titles__h2__border"></div>
+            </h2>
+        </div>
+        <?php echo do_shortcode('[wpforms id="43" title="false"]'); ?>
+    </div>
 </div>
 
 <?php get_footer(); ?>

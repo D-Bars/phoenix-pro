@@ -6,6 +6,7 @@ add_action('wp_enqueue_scripts', function(){
     wp_enqueue_style( 'font-Awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
     wp_enqueue_script('main-js',   get_template_directory_uri() . '/assets/js/main.js',array(), false, true);
+    wp_enqueue_script('locomotive-scroll',   "https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js");
     wp_enqueue_script('jquery' );
 });
 

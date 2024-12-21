@@ -745,20 +745,30 @@ html {
 
   @include box(100%);
   @include flex__box(row, stretch);
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 }
 
 .about__us__content__box {
-  padding-top: 5vw;
   gap: 3vw;
 
   @include box(50%, 2.5%);
   @include flex__box(column);
 
+  @media screen and (max-width: 800px) {
+    align-items: center;
+    width: 95%;
+    padding: 0 2.5%;
+    padding-top: 5vw;
+  }
+
   & h2 {
     padding-left: 5px;
     @include text(180%, 800, #000);
 
-    & .h2__border {
+    & .about__us__h2__border {
       @include h2__el(1em);
     }
   }
@@ -768,14 +778,22 @@ html {
     line-height: 1.5;
 
     @include text(120%, 600, #000);
+
+    @media screen and (max-width: 800px) {
+      font-size: 6vw;
+    }
   }
 }
 
 .about__us__wrapper__img {
-  min-height: 40vw;
+  min-height: 30vw;
   border-radius: 10px 0 0 10px;
 
   @include img_box(50%);
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 
   & img {
     border-radius: 10px 0 0 10px;
@@ -787,7 +805,9 @@ html {
 /* ============================= Translate Press ============================= */
 #trp-floater-ls.trp-bottom-right {
   display: none;
-};
+}
+
+;
 
 .header__lang__box {
   @media screen and (max-width: 800px) {
@@ -801,11 +821,11 @@ html {
     justify-content: flex-end;
   }
 
-  & .trp-language-switcher-container{
+  & .trp-language-switcher-container {
     display: flex;
     align-items: center;
 
-    &:hover .trp-ls-shortcode-language{
+    &:hover .trp-ls-shortcode-language {
       all: unset;
     }
   }
@@ -832,25 +852,151 @@ html {
     background-size: unset;
   }
 
-  & .trp-ls-shortcode-current-language{
+  & .trp-ls-shortcode-current-language {
     display: none;
   }
 
-  & .trp-ls-shortcode-disabled-language{
+  & .trp-ls-shortcode-disabled-language {
     background-color: $color2;
   }
 
-  & .trp-language-switcher > div > a.trp-ls-shortcode-disabled-language:hover{
+  & .trp-language-switcher>div>a.trp-ls-shortcode-disabled-language:hover {
     background-color: $color2;
   }
 
-  & .trp-language-switcher > div > a{
+  & .trp-language-switcher>div>a {
     transition: .4s;
 
-    &:hover{
+    &:hover {
       background-color: rgba($color2, 70%);
     }
   }
 }
 
 /* ============================= Translate Press ============================= */
+
+
+/* ============================= FORM ============================= */
+
+.form__block {
+  position: relative;
+  border: 3px solid #000;
+  border-left: unset;
+  border-right: unset;
+
+  @include box(100%);
+  @include flex__box(column, center);
+}
+
+.form__wrapper__img {
+  position: absolute;
+  z-index: 1;
+
+  @include img_box(100%, 100%);
+
+  & img {
+    filter: blur(3px) grayscale(0.2);
+  }
+}
+
+.form__mask {
+  @include img__mask(0.6, #000);
+}
+
+.form__content {
+  position: relative;
+  padding: 5vw 2.5%;
+  gap: 2vw;
+  z-index: 3;
+
+  @include box(80%, 2.5%);
+  @include flex__box(column, center);
+}
+
+
+.form__titles__box {
+  gap: 1.5vw;
+  letter-spacing: 8px;
+
+  @include box(100%);
+  @include flex__box(column, center);
+
+  & .form__content__subtitle {
+    @include text(100%, 600, #ffffffa2);
+  }
+
+  & h2 {
+    text-transform: uppercase;
+
+    @include text(140%, 600, #FFF);
+
+    & .form__titles__h2__border {
+      @include h2__el(3em);
+    }
+  }
+}
+
+.form__content {
+
+  & form{
+    @include flex__box(column, center);
+  }
+
+  & .wpforms-container {
+    @include box(100%);
+  }
+
+  & .wpforms-field-container {
+    flex-wrap: wrap;
+    gap: 2%;
+
+    @include box(100%);
+    @include flex__box(row, center);
+
+    & .form__content__input {
+      @include box(32%);
+
+      & input {
+        background-color: rgba(#000, 0.1);
+        outline: 1px solid #FFF7;
+        border: unset;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+
+        @include text(110%, 800, #FFF);
+
+        &::placeholder {
+          color: #FFF;
+        }
+
+        &:focus {
+          color: #FFF !important;
+        }
+      }
+    }
+
+    & .form__content__textarea {
+      @include box(100%);
+
+      & textarea {
+        background-color: rgba(#000, 0.1);
+        outline: 1px solid #FFF7;
+        border: unset;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+
+        @include text(110%, 800, #FFF);
+
+        &::placeholder {
+          color: #FFF;
+        }
+
+        &:focus {
+          color: #FFF !important;
+        }
+      }
+    }
+  }
+}
+
+  /* ============================= FORM ============================= */
