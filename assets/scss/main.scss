@@ -443,6 +443,7 @@ html {
     order: 2;
     flex-direction: column;
     align-items: center;
+    padding-top: 10vw;
     gap: 4vw;
   }
 
@@ -789,7 +790,11 @@ html {
 };
 
 .header__lang__box {
-
+  @media screen and (max-width: 800px) {
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+  }
 
   & .trp_language_switcher_shortcode {
     display: flex;
@@ -829,6 +834,22 @@ html {
 
   & .trp-ls-shortcode-current-language{
     display: none;
+  }
+
+  & .trp-ls-shortcode-disabled-language{
+    background-color: $color2;
+  }
+
+  & .trp-language-switcher > div > a.trp-ls-shortcode-disabled-language:hover{
+    background-color: $color2;
+  }
+
+  & .trp-language-switcher > div > a{
+    transition: .4s;
+
+    &:hover{
+      background-color: rgba($color2, 70%);
+    }
   }
 }
 

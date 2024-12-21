@@ -37,7 +37,7 @@ $advantages = get_posts(array(
     </div>
 <?php endif; ?>
 
-<div class="about__us__block">
+<div class="about__us__block" id="about__us">
     <!-- design element -->
     <div class="about__us__content__box">
         <h2>

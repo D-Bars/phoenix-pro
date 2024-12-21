@@ -366,6 +366,7 @@ html {
     order: 2;
     flex-direction: column;
     align-items: center;
+    padding-top: 10vw;
     gap: 4vw;
   }
 }
@@ -1009,6 +1010,13 @@ html {
   display: none;
 }
 
+@media screen and (max-width: 800px) {
+  .header__lang__box {
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+  }
+}
 .header__lang__box .trp_language_switcher_shortcode {
   display: flex;
   justify-content: flex-end;
@@ -1041,6 +1049,18 @@ html {
 }
 .header__lang__box .trp-ls-shortcode-current-language {
   display: none;
+}
+.header__lang__box .trp-ls-shortcode-disabled-language {
+  background-color: #f5c582;
+}
+.header__lang__box .trp-language-switcher > div > a.trp-ls-shortcode-disabled-language:hover {
+  background-color: #f5c582;
+}
+.header__lang__box .trp-language-switcher > div > a {
+  transition: 0.4s;
+}
+.header__lang__box .trp-language-switcher > div > a:hover {
+  background-color: rgba(245, 197, 130, 0.7);
 }
 
 /* ============================= Translate Press ============================= */

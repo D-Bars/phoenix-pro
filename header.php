@@ -31,7 +31,7 @@
                 <div class="header__menu__box" modal_wrapper>
                     <div class="header__lang__menu__box">
                         <ul class="header__menu__items__box">
-                            <li class="header__menu__item"><a href="#"><?php _e('О фирме', 'firm'); ?></a></li>
+                            <li class="header__menu__item"><a href="#about__us"><?php _e('О нас', 'firm'); ?></a></li>
                             <li class="header__menu__item"><a href="#"><?php _e('Контакты', 'firm'); ?></a></li>
                             <li class="header__menu__item"><a href="#"><?php _e('Контакты', 'firm'); ?></a></li>
                         </ul>
