@@ -201,6 +201,10 @@ $mfont_size: 5.8vw;
   border-bottom: 5px solid $color2;
   border-radius: 10px;
 
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+
 }
 
 // МИКСИНЫ
@@ -886,6 +890,10 @@ html {
 
   @include box(100%);
   @include flex__box(column, center);
+
+  @media screen and (max-width: 800px) {
+    align-items: center;
+  }
 }
 
 .form__wrapper__img {
@@ -893,6 +901,10 @@ html {
   z-index: 1;
 
   @include img_box(100%, 100%);
+
+  @media screen and (max-width: 800px) {
+    height: 100%;
+  }
 
   & img {
     filter: blur(3px) grayscale(0.2);
@@ -921,6 +933,11 @@ html {
   @include box(100%);
   @include flex__box(column, center);
 
+  @media screen and (max-width: 800px) {
+    text-align: center;
+    gap: 3vw;
+  }
+
   & .form__content__subtitle {
     @include text(100%, 600, #ffffffa2);
   }
@@ -937,8 +954,15 @@ html {
 }
 
 .form__content {
+  
+  @media screen and (max-width: 800px) {
+    padding-top: 5vw;
+    width: 95%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
 
-  & form{
+  & form {
     @include flex__box(column, center);
   }
 
@@ -954,14 +978,22 @@ html {
     @include flex__box(row, center);
 
     & .form__content__input {
+      padding: 25px 0;
+
       @include box(32%);
+
+      @media screen and (max-width: 800px) {
+      padding: 25px 0 !important;
+      }
 
       & input {
         background-color: rgba(#000, 0.1);
         outline: 1px solid #FFF7;
+        outline-offset: -1px;
         border: unset;
         padding-top: 1vw;
         padding-bottom: 1vw;
+        transition: background .4s;
 
         @include text(110%, 800, #FFF);
 
@@ -971,21 +1003,30 @@ html {
 
         &:focus {
           color: #FFF !important;
+          outline: 2px solid #FFF !important;
+          background-color: #FFF3;
+          border: unset !important;
         }
       }
     }
 
     & .form__content__textarea {
-      @include box(100%);
+      @include box(100%, 0, auto, 1vw);
 
       & textarea {
         background-color: rgba(#000, 0.1);
         outline: 1px solid #FFF7;
+        outline-offset: -1px;
         border: unset;
         padding-top: 1vw;
         padding-bottom: 1vw;
+        transition: background .4s;
 
         @include text(110%, 800, #FFF);
+
+        @media screen and (max-width: 800px) {
+          margin-top: 1vw;
+        }
 
         &::placeholder {
           color: #FFF;
@@ -993,10 +1034,64 @@ html {
 
         &:focus {
           color: #FFF !important;
+          outline: 2px solid #FFF;
+          background-color: #FFF3;
+          border: unset;
         }
       }
     }
+
+    & em.wpforms-error {
+      position: absolute !important;
+      bottom: 0;
+      margin-top: 0 !important;
+    }
+
+  }
+
+  & .wpforms-field-gdpr-checkbox {
+
+    & label.wpforms-field-label,
+    label.wpforms-field-label-inline {
+      color: #FFF;
+    }
+  }
+
+  & .wpforms-confirmation-container-full {
+    background: #FFF3 !important;
+    border: 1px solid #f5c582 !important;
+    padding: 5vw 0 !important;
+
+    @include box(100%);
+    @include flex__box(column, center);
+
+    @media screen and (max-width: 800px) {
+      padding: 10vw 0 !important;
+    }
+
+    & p::before {
+      content: '\f00c';
+      position: relative;
+      display: block;
+      text-align: center;
+      margin-bottom: 3vw;
+
+      @include text(150%, 800, green, 'Font Awesome 5 Free');
+    }
+
+    & p {
+      color: #FFF !important;
+      font-weight: 800;
+
+      @media screen and (max-width: 800px) {
+        text-align: center;
+      }
+    }
+  }
+
+  & .wpforms-submit-container button{
+    @include text(130%, 600, #000);
   }
 }
 
-  /* ============================= FORM ============================= */
+/* ============================= FORM ============================= */

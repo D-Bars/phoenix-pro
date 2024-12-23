@@ -32,8 +32,8 @@
                     <div class="header__lang__menu__box">
                         <ul class="header__menu__items__box">
                             <li class="header__menu__item"><a href="#about__us"><?php _e('О нас', 'firm'); ?></a></li>
-                            <li class="header__menu__item"><a href="#"><?php _e('Контакты', 'firm'); ?></a></li>
-                            <li class="header__menu__item"><a href="#"><?php _e('Контакты', 'firm'); ?></a></li>
+                            <li class="header__menu__item"><a href="#advantages"><?php _e('Преимущества', 'firm'); ?></a></li>
+                            <li class="header__menu__item"><a href="#contact"><?php _e('Контакты', 'firm'); ?></a></li>
                         </ul>
                         <div class="header__lang__box">
                             <?php echo do_shortcode('[language-switcher]'); ?>
@@ -68,11 +68,11 @@
                     echo '<div class="header__center__description">' . __('' . $theme__options['header__description'] . '', 'firm') . '</div>'
                 ?>
                 <?php endif; ?>
-                <div class="header__center__btn">
+                <a class="header__center__btn" href="#contact">
                     <i class="fa-regular fa-lightbulb"></i>
                     <span><?php _e('Связаться', 'firm'); ?></span>
                     <i class="fa-regular fa-lightbulb"></i>
-                </div>
+                </a>
             </div>
         </div>
     </header>

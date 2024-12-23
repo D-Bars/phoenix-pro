@@ -8,7 +8,7 @@ $advantages = get_posts(array(
 ));
 ?>
 <?php if ($advantages): ?>
-    <div class="advantages__block">
+    <div class="advantages__block" id="advantages">
         <?php
         $i = 0;
         foreach ($advantages as $advantage):
@@ -59,7 +59,7 @@ $advantages = get_posts(array(
     <!-- design element -->
 </div>
 
-<div class="form__block">
+<div class="form__block" id="contact">
     <div class="form__wrapper__img"><div class="form__mask"></div><img src="<?php echo get_template_directory_uri(); ?>./assets/img/form__bckgr.jpg" alt=""></div>
     <div class="form__content">
         <div class="form__titles__box">
