@@ -316,6 +316,11 @@ nav {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+
+  @media screen and (max-width: 800px) {
+    scroll-padding-top: unset;
+  }
 }
 
 /* BASIC */
@@ -1090,7 +1095,29 @@ html {
   }
 
   & .wpforms-submit-container button{
-    @include text(130%, 600, #000);
+    font-size: 1.3vw !important;
+    background: unset !important;
+    background-color: #0004 !important;
+    outline: 1px solid #FFF3;
+    outline-offset: -1px;
+    padding: 0 1.5vw !important;
+    height: 2.5vw !important;
+    transition: background text-shadow .4s !important;
+
+    @media screen and (max-width: 800px) {
+      font-size: 7vw !important;
+      height: 11vw !important;
+      padding: 0 5vw !important;
+      outline-color: #FFF;
+    }
+
+    &:hover{
+      outline-offset: 0px;
+      outline: 1px solid #FFF;
+      background-color: $color2 !important;
+      text-shadow: 0px 0px 5px #000,
+        0px 0px 10px #000;
+    }
   }
 }
 
