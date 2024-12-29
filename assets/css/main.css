@@ -4,7 +4,6 @@
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   cursor: pointer;
-  transition: 0.4s;
 }
 .custom__btn, .header__center__btn {
   display: flex;
@@ -20,7 +19,7 @@
 .custom__btn i, .header__center__btn i {
   font-size: 1vw;
   color: #FFF;
-  transition: 0.4s;
+  transition: font-weight 0.4s, text-shadow 0.6s;
 }
 @media screen and (max-width: 800px) {
   .custom__btn i, .header__center__btn i {
@@ -174,9 +173,9 @@ html {
 .header__line {
   position: fixed;
   padding: 0.2vw 2.5%;
-  background-color: #2e363b;
+  background-color: rgba(46, 54, 59, 0.9);
   transform: translateY(-300px);
-  transition: 0.6s;
+  transition: transform 0.6s, background 0.3s;
   z-index: 991;
 }
 .header__line {
@@ -205,6 +204,9 @@ html {
     padding: 0.5vw 2.5%;
   }
 }
+.header__line:hover {
+  background-color: #2e363b;
+}
 
 .header__background {
   background-color: rgba(245, 197, 130, 0);
@@ -215,8 +217,8 @@ html {
   transition: 0.6s;
 }
 .header__logo__wrapper {
-  width: 18%;
-  height: 7vh;
+  width: 15%;
+  height: 6vh;
   outline: unset;
   outline-offset: -2px;
 }
@@ -242,6 +244,7 @@ html {
 }
 .header__logo__wrapper img {
   display: flex;
+  object-fit: contain;
 }
 @media screen and (max-width: 800px) {
   .header__logo__wrapper img {
@@ -267,9 +270,9 @@ html {
 }
 
 .header__menu__wrapper {
-  width: 77%;
-  padding-left: 1.5%;
-  padding-right: 1.5%;
+  width: 80%;
+  padding-left: 0%;
+  padding-right: 0%;
   margin-top: 0;
   height: auto;
 }
@@ -335,7 +338,7 @@ html {
   .header__lang__menu__box {
     position: relative;
     width: 95%;
-    background-color: #797878;
+    background-color: #2e363b;
     flex-direction: column;
     align-items: center;
     border-radius: 0 0 15px 15px;
@@ -379,7 +382,7 @@ html {
 .header__menu__items__box li {
   position: relative;
   top: 0;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 .header__menu__items__box li:hover {
   top: -0.1vw;
@@ -401,7 +404,7 @@ html {
   box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.8);
   background: url(../img/close.png), #000;
   background-size: 70% 70%;
-  background-color: #797878;
+  background-color: #2e363b;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 999;
@@ -609,7 +612,7 @@ html {
 /* ============================= HEADER ============================= */
 /* ============================= ADVANTAGES ============================= */
 .advantages__block {
-  background-color: #797878;
+  background-color: #2e363b;
   border-top: 5px solid #000;
 }
 .advantages__block {
@@ -901,7 +904,7 @@ html {
 /* ============================= ADVANTAGES ============================= */
 /* ============================= ABOUT__US ============================= */
 .about__us__block {
-  background-color: #797878;
+  background-color: #2e363b;
   padding: 5vw 0;
 }
 .about__us__block {
@@ -1475,7 +1478,7 @@ html {
     text-align: center;
   }
 }
-.form__content .wpforms-submit-container button {
+.form__content .wpforms-submit-container button.wpforms-submit {
   font-size: 1.3vw !important;
   background: unset !important;
   background-color: rgba(0, 0, 0, 0.2666666667) !important;
@@ -1483,21 +1486,58 @@ html {
   outline-offset: -1px;
   padding: 0 1.5vw !important;
   height: 2.5vw !important;
-  transition: background text-shadow 0.4s !important;
+  transition: background, text-shadow 0.4s;
 }
 @media screen and (max-width: 800px) {
-  .form__content .wpforms-submit-container button {
+  .form__content .wpforms-submit-container button.wpforms-submit {
     font-size: 7vw !important;
     height: 11vw !important;
     padding: 0 5vw !important;
     outline-color: #FFF;
   }
 }
-.form__content .wpforms-submit-container button:hover {
+.form__content .wpforms-submit-container button.wpforms-submit::before, .form__content .wpforms-submit-container button.wpforms-submit::after {
+  content: "\f0eb";
+  font-size: 1vw;
+  font-weight: 400;
+  font-family: "Font Awesome 6 Free";
+  transition: 0.4s;
+}
+.form__content .wpforms-submit-container button.wpforms-submit::before {
+  padding-right: 1vw;
+}
+.form__content .wpforms-submit-container button.wpforms-submit::after {
+  padding-left: 1vw;
+}
+.form__content .wpforms-submit-container button.wpforms-submit:hover {
   outline-offset: 0px;
   outline: 1px solid #FFF;
   background-color: #f5c582 !important;
   text-shadow: 0px 0px 5px #000, 0px 0px 10px #000;
 }
+.form__content .wpforms-submit-container button.wpforms-submit:hover::after, .form__content .wpforms-submit-container button.wpforms-submit:hover::before {
+  font-weight: 800;
+}
 
 /* ============================= FORM ============================= */
+/* ============================= FOOTER ============================= */
+footer {
+  min-height: 20vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  transition: 1s;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+footer:hover {
+  background-color: #f5c582;
+}
+footer .block1 {
+  width: 4vw;
+}
+
+/* ============================= FOOTER ============================= */
