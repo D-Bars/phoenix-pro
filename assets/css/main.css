@@ -1518,14 +1518,40 @@ html {
 .form__content .wpforms-submit-container button.wpforms-submit:hover::after, .form__content .wpforms-submit-container button.wpforms-submit:hover::before {
   font-weight: 800;
 }
+.form__content .wpforms-submit-container button.wpforms-submit:focus {
+  padding: 0 1.5vw !important;
+}
+.form__content .wpforms-submit-container button.wpforms-submit:focus::before, .form__content .wpforms-submit-container button.wpforms-submit:focus::after {
+  content: "\f0eb";
+  color: #f5c582;
+}
+.form__content .wpforms-submit-container button.wpforms-submit:focus::after {
+  position: relative !important;
+  border: none !important;
+  top: unset !important;
+  left: unset !important;
+  bottom: unset !important;
+  right: unset !important;
+}
 
 /* ============================= FORM ============================= */
 /* ============================= FOOTER ============================= */
 footer {
-  min-height: 20vw;
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  transition: 1s;
+  background-color: #2e363b;
+  padding: 5vw 2.5%;
+}
+footer {
+  width: 95%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  margin-top: 0;
+  height: auto;
+}
+@media screen and (max-width: 800px) {
+  footer {
+    width: 100%;
+    padding: 0;
+  }
 }
 footer {
   display: flex;
@@ -1533,11 +1559,103 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
-footer:hover {
-  background-color: #f5c582;
+
+.footer__contact__block {
+  gap: 1vw 5%;
+  flex-wrap: wrap;
 }
-footer .block1 {
-  width: 4vw;
+.footer__contact__block {
+  width: 30%;
+  padding-left: 0%;
+  padding-right: 0%;
+  margin-top: 0;
+  height: auto;
+}
+@media screen and (max-width: 800px) {
+  .footer__contact__block {
+    width: 100%;
+    padding: 0;
+  }
+}
+.footer__contact__block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__contact__item {
+  gap: 1vw;
+}
+.footer__contact__item {
+  width: 47.5%;
+  padding-left: 0%;
+  padding-right: 0%;
+  margin-top: 0;
+  height: auto;
+}
+@media screen and (max-width: 800px) {
+  .footer__contact__item {
+    width: 100%;
+    padding: 0;
+  }
+}
+.footer__contact__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: unset;
+}
+.footer__contact__item .footer__contact__ico {
+  font-size: 225%;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #FFF;
+}
+@media screen and (max-width: 800px) {
+  .footer__contact__item .footer__contact__ico {
+    font-size: 8.7vw;
+  }
+}
+
+.footer__contact__name {
+  font-size: 144%;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: #FFF;
+}
+@media screen and (max-width: 800px) {
+  .footer__contact__name {
+    font-size: 6.96vw;
+  }
+}
+
+.footer__design__el {
+  width: 5vw;
+  height: 0.3vw;
+  background-color: #f5c582;
+  border-radius: 20px;
+}
+
+.footer__logo__wrapper {
+  width: 30%;
+  height: auto;
+  outline: unset;
+  outline-offset: -2px;
+}
+.footer__logo__wrapper img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .footer__logo__wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: -1;
+  }
 }
 
 /* ============================= FOOTER ============================= */

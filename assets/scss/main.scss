@@ -1142,6 +1142,25 @@ html {
           font-weight: 800;
         }
     }
+
+    &:focus {
+      padding: 0 1.5vw !important;
+    
+      &::before,
+      &::after {
+        content: '\f0eb';
+        color: $color2;
+      }
+
+      &::after{
+        position: relative !important;
+        border: none !important;
+        top: unset !important;
+        left: unset !important;
+        bottom: unset !important;
+        right: unset !important;
+      }
+    }
   }
 }
 
@@ -1151,20 +1170,45 @@ html {
 /* ============================= FOOTER ============================= */
 
 footer{
-  min-height: 20vw;
-  background-color: rgba(#000, 0.7);
-  width: 100%;
-  transition: 1s;
+  background-color: $color1;
+  padding: 5vw 2.5%;
 
+  @include box(100%, 2.5%);
   @include flex__box(row, center, space-between);
+}
 
-  &:hover{
-    background-color: $color2;
-  }
+.footer__contact__block{
+  gap: 1vw 5%;
+  flex-wrap: wrap;
+  
+  @include box(30%);
+  @include flex__box(row, center, center);
+}
 
-  & .block1{
-    width: 4vw;
+.footer__contact__item{
+  gap: 1vw;
+
+  @include box(47.5%);
+  @include flex__box(column, center);
+
+  & .footer__contact__ico{
+    @include text(150%, 900, #FFF, "Font Awesome 5 Free");
   }
+}
+
+.footer__contact__name{
+  @include text(120%, 600, #FFF);
+}
+
+.footer__design__el{
+  width: 5vw;
+  height: 0.3vw;
+  background-color: $color2;
+  border-radius: 20px;
+}
+
+.footer__logo__wrapper{
+  @include img_box(30%);
 }
 
 /* ============================= FOOTER ============================= */
