@@ -1189,11 +1189,15 @@ footer{
   gap: 1vw;
 
   @include box(47.5%);
-  @include flex__box(column, center);
+  @include flex__box(row, center);
 
   & .footer__contact__ico{
     @include text(150%, 900, #FFF, "Font Awesome 5 Free");
   }
+}
+
+.footer__contact__title{
+  @include text(140%, 600, #FFF);
 }
 
 .footer__contact__name{
@@ -1209,6 +1213,10 @@ footer{
 
 .footer__logo__wrapper{
   @include img_box(30%);
+}
+
+.footer__contact__item__box{
+  @include flex__box(column);
 }
 
 /* ============================= FOOTER ============================= */

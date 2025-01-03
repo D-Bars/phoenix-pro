@@ -1602,7 +1602,7 @@ footer {
 }
 .footer__contact__item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: unset;
 }
@@ -1615,6 +1615,18 @@ footer {
 @media screen and (max-width: 800px) {
   .footer__contact__item .footer__contact__ico {
     font-size: 8.7vw;
+  }
+}
+
+.footer__contact__title {
+  font-size: 196%;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: #FFF;
+}
+@media screen and (max-width: 800px) {
+  .footer__contact__title {
+    font-size: 8.12vw;
   }
 }
 
@@ -1656,6 +1668,13 @@ footer {
     flex-direction: column;
     flex-grow: -1;
   }
+}
+
+.footer__contact__item__box {
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
+  justify-content: unset;
 }
 
 /* ============================= FOOTER ============================= */
