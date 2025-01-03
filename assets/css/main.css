@@ -1559,6 +1559,14 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 800px) {
+  footer {
+    width: 95%;
+    padding: 5vw 2.5%;
+    flex-direction: column;
+    gap: 5vw;
+  }
+}
 
 .footer__contact__block {
   gap: 1vw 5%;
@@ -1582,6 +1590,12 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+@media screen and (max-width: 800px) {
+  .footer__contact__block {
+    width: 95%;
+    padding-left: 5%;
+  }
 }
 
 .footer__contact__item {
@@ -1617,6 +1631,16 @@ footer {
     font-size: 8.7vw;
   }
 }
+@media screen and (max-width: 800px) {
+  .footer__contact__item .footer__contact__ico {
+    width: 10vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .footer__contact__item {
+    gap: 5vw;
+  }
+}
 
 .footer__contact__title {
   font-size: 196%;
@@ -1648,6 +1672,12 @@ footer {
   background-color: #f5c582;
   border-radius: 20px;
 }
+@media screen and (max-width: 800px) {
+  .footer__design__el {
+    width: 50%;
+    height: 2vw;
+  }
+}
 
 .footer__logo__wrapper {
   width: 30%;
@@ -1678,6 +1708,14 @@ footer {
   flex-direction: column;
   align-items: unset;
   justify-content: unset;
+}
+@media screen and (max-width: 800px) {
+  .footer__contact__item__box {
+    width: 85%;
+  }
+  .footer__contact__item__box .footer__mail {
+    font-size: 4.5vw;
+  }
 }
 
 /* ============================= FOOTER ============================= */

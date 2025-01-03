@@ -1175,6 +1175,13 @@ footer{
 
   @include box(100%, 2.5%);
   @include flex__box(row, center, space-between);
+
+  @media screen and (max-width: 800px) {
+    width: 95%;
+    padding: 5vw 2.5%;
+    flex-direction: column;
+    gap: 5vw;
+  }
 }
 
 .footer__contact__block{
@@ -1183,6 +1190,11 @@ footer{
   
   @include box(30%);
   @include flex__box(row, center, center);
+
+  @media screen and (max-width: 800px) {
+    width: 95%;
+    padding-left: 5%;
+  }
 }
 
 .footer__contact__item{
@@ -1193,6 +1205,14 @@ footer{
 
   & .footer__contact__ico{
     @include text(150%, 900, #FFF, "Font Awesome 5 Free");
+    
+    @media screen and (max-width: 800px) {
+      width: 10vw;
+    }
+  }
+  
+  @media screen and (max-width: 800px) {
+    gap: 5vw;
   }
 }
 
@@ -1209,6 +1229,11 @@ footer{
   height: 0.3vw;
   background-color: $color2;
   border-radius: 20px;
+
+  @media screen and (max-width: 800px) {
+    width: 50%;
+    height: 2vw;
+  }
 }
 
 .footer__logo__wrapper{
@@ -1221,6 +1246,14 @@ footer{
 
 .footer__contact__item__box{
   @include flex__box(column);
+
+  @media screen and (max-width: 800px) {
+    width: 85%;
+    
+    & .footer__mail{
+      font-size: 4.5vw;
+    }
+  }
 }
 
 /* ============================= FOOTER ============================= */

@@ -20,7 +20,7 @@
             <?php if ($theme__options['footer__mail']): ?>
                 <div class="footer__contact__item__box">
                     <div class="footer__contact__title"><?php _e('Почта', 'firm'); ?></div>
-                    <a class="footer__contact__name" href="mailto:<?php echo $theme__options['footer__mail']; ?>">
+                    <a class="footer__contact__name footer__mail" href="mailto:<?php echo $theme__options['footer__mail']; ?>">
                         <?php echo $theme__options['footer__mail']; ?>
                     </a>
                 </div>
