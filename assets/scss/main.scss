@@ -1213,6 +1213,10 @@ footer{
 
 .footer__logo__wrapper{
   @include img_box(30%);
+
+  & a{
+    display: block;
+  }
 }
 
 .footer__contact__item__box{

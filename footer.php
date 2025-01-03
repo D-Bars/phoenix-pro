@@ -39,9 +39,11 @@
     <div class="footer__design__el"></div>
     <div class="footer__logo__wrapper">
         <?php
-        if ($theme__options['footer__logo']):
-            echo '<img src="' . esc_url($theme__options['footer__logo']) . '" alt="FooterLogo">'
-                ?>
+        if ($theme__options['footer__logo']): ?>
+            <a href="<?php echo home_url(); ?>">
+            <?php echo '<img src="' . esc_url($theme__options['footer__logo']) . '" alt="FooterLogo">'
+            ?>
+            </a>
         <?php endif; ?>
     </div>
 </footer>

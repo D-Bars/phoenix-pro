@@ -1669,6 +1669,9 @@ footer {
     flex-grow: -1;
   }
 }
+.footer__logo__wrapper a {
+  display: block;
+}
 
 .footer__contact__item__box {
   display: flex;
