@@ -342,10 +342,6 @@ html {
     width: 95%;
     padding: 0.5vw 2.5%;
   }
-
-  &:hover{
-    background-color: $color1;
-  }
 }
 
 .header__background {
@@ -395,12 +391,12 @@ html {
   @media screen and (max-width: 800px) {
     display: block;
     position: fixed;
-    padding: 2vw;
+    padding: 1vw;
     border-radius: 5px;
     background-color: rgba(#2e363b, 90%);
     top: 1vw;
     right: 1vw;
-    width: 15vw;
+    width: 12vw;
     height: auto;
     z-index: 991;
 
@@ -584,7 +580,7 @@ html {
   border-top: 5px solid #000;
 
   @include box(100%, 2.5%);
-  @include flex__box(row, flex-start, space-between);
+  @include flex__box(row, stretch, space-between);
 
   @media screen and (max-width: 800px) {
     width: 98%;
@@ -599,7 +595,7 @@ html {
 .advantages__item {
   position: relative;
 
-  @include box(23%, 0, 100%);
+  @include box(23%, 0, unset);
   @include flex__box(column, center, center);
 }
 
@@ -653,13 +649,13 @@ html {
 .advantages__item__content__box {
   border-radius: 10px;
   outline: 3px solid #000;
-  padding: 1vw 2.5%;
+  padding: 3vw 2.5%;
   gap: 1vw;
   text-align: center;
   user-select: none;
   transition: .8s;
 
-  @include box(100%, 2.5%, 10vw, 8vh);
+  @include box(100%, 2.5%, 100%, 8vh);
   @include flex__box(column, center);
 
   @media screen and (max-width: 800px) {
@@ -1121,6 +1117,10 @@ html {
       font-weight: 400;
       font-family: 'Font Awesome 6 Free';
       transition: .4s;
+
+      @media screen and (max-width: 800px) {
+        font-size: 6vw;
+      }
     }
 
     &::before{

@@ -204,9 +204,6 @@ html {
     padding: 0.5vw 2.5%;
   }
 }
-.header__line:hover {
-  background-color: #2e363b;
-}
 
 .header__background {
   background-color: rgba(245, 197, 130, 0);
@@ -295,12 +292,12 @@ html {
   .burger__menu {
     display: block;
     position: fixed;
-    padding: 2vw;
+    padding: 1vw;
     border-radius: 5px;
     background-color: rgba(46, 54, 59, 0.9);
     top: 1vw;
     right: 1vw;
-    width: 15vw;
+    width: 12vw;
     height: auto;
     z-index: 991;
   }
@@ -631,7 +628,7 @@ html {
 .advantages__block {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-between;
 }
 @media screen and (max-width: 800px) {
@@ -652,7 +649,7 @@ html {
   padding-left: 0;
   padding-right: 0;
   margin-top: 0;
-  height: 100%;
+  height: unset;
 }
 @media screen and (max-width: 800px) {
   .advantages__item {
@@ -756,7 +753,7 @@ html {
 .advantages__item__content__box {
   border-radius: 10px;
   outline: 3px solid #000;
-  padding: 1vw 2.5%;
+  padding: 3vw 2.5%;
   gap: 1vw;
   text-align: center;
   user-select: none;
@@ -767,7 +764,7 @@ html {
   padding-left: 2.5%;
   padding-right: 2.5%;
   margin-top: 8vh;
-  height: 10vw;
+  height: 100%;
 }
 @media screen and (max-width: 800px) {
   .advantages__item__content__box {
@@ -1502,6 +1499,11 @@ html {
   font-weight: 400;
   font-family: "Font Awesome 6 Free";
   transition: 0.4s;
+}
+@media screen and (max-width: 800px) {
+  .form__content .wpforms-submit-container button.wpforms-submit::before, .form__content .wpforms-submit-container button.wpforms-submit::after {
+    font-size: 6vw;
+  }
 }
 .form__content .wpforms-submit-container button.wpforms-submit::before {
   padding-right: 1vw;

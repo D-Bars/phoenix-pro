@@ -95,8 +95,8 @@ jQuery(document).ready(function ($) {
             this.collection = collection;
             this.firstItem = this.collection.first();
 
-            this.setCarousel();
             this.addListeners();
+            this.setCarousel();
         }
 
         getActiveItem() {
@@ -126,7 +126,6 @@ jQuery(document).ready(function ($) {
 
         addListeners() {
             this.collection.on('mouseenter', (event) => {
-                clearInterval(this.intervalID);
                 this.removeActiveClass();
                 this.setActiveItem($(event.currentTarget));
             })
@@ -136,6 +135,9 @@ jQuery(document).ready(function ($) {
         }
 
         setCarousel() {
+            if (this.intervalID) {
+                clearInterval(this.intervalID);
+            }
             this.intervalID = setInterval(() => {
                 let newActiveItem = this.nextItem();
                 this.removeActiveClass();
