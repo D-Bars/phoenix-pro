@@ -964,7 +964,6 @@ html {
     font-size: clamp(0.8em, 1vw, 1.3em);
     font-weight: 600;
     color: #ffffffa2;
-    // @include text(100%, 600, #ffffffa2);
   }
 
   & h2 {
@@ -1260,14 +1259,12 @@ footer {
   font-size: clamp(1.5em, 2vw, 2em);
   font-weight: 600;
   color: #FFF;
-  // @include text(140%, 600, #FFF);
 }
 
 .footer__contact__name {
   font-size: clamp(1em, 2vw, 1.5em);
   font-weight: 600;
   color: #FFF;
-  // @include text(120%, 600, #FFF);
 }
 
 .footer__design__el {
