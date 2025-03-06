@@ -17,29 +17,16 @@
   }
 }
 .custom__btn i, .header__center__btn i {
-  font-size: 1vw;
+  font-size: clamp(1.5em, 2vw, 2em);
   color: #FFF;
   transition: font-weight 0.4s, text-shadow 0.6s;
 }
-@media screen and (max-width: 800px) {
-  .custom__btn i, .header__center__btn i {
-    font-size: 6vw;
-  }
-}
 .custom__btn span, .header__center__btn span {
-  padding: 0 2vw;
-  transition: 0.4s;
-}
-.custom__btn span, .header__center__btn span {
-  font-size: 169%;
-  font-family: "Montserrat";
+  font-size: clamp(1.5em, 2vw, 2em);
   font-weight: 800;
   color: #FFF;
-}
-@media screen and (max-width: 800px) {
-  .custom__btn span, .header__center__btn span {
-    font-size: 7.54vw;
-  }
+  padding: 0 2vw;
+  transition: 0.4s;
 }
 @media screen and (max-width: 800px) {
   .custom__btn span, .header__center__btn span {
@@ -356,17 +343,6 @@ html {
   align-items: center;
   justify-content: unset;
 }
-.header__menu__items__box {
-  font-size: 196%;
-  font-family: "Montserrat";
-  font-weight: 600;
-  color: #FFF;
-}
-@media screen and (max-width: 800px) {
-  .header__menu__items__box {
-    font-size: 8.12vw;
-  }
-}
 @media screen and (max-width: 800px) {
   .header__menu__items__box {
     order: 2;
@@ -377,6 +353,9 @@ html {
   }
 }
 .header__menu__items__box li {
+  font-size: clamp(1.5em, 1.5vw, 2em);
+  font-weight: 600;
+  color: #FFF;
   position: relative;
   top: 0;
   transition: 0.2s;
@@ -398,7 +377,7 @@ html {
   right: 1vw;
   top: 1vw;
   border-radius: 10px;
-  box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.8);
+  border: 2px solid #FFF;
   background: url(../img/close.png), #000;
   background-size: 70% 70%;
   background-color: #2e363b;
@@ -408,8 +387,8 @@ html {
 }
 @media screen and (max-width: 800px) {
   .header__menu__closer {
-    width: 12vw;
-    height: 12vw;
+    width: 9.6vw;
+    height: 9.6vw;
   }
 }
 @media screen and (max-width: 800px) {
@@ -557,19 +536,11 @@ html {
 }
 
 .header__center__title {
-  letter-spacing: 5px;
-  line-height: 0.9;
-}
-.header__center__title {
-  font-size: 529%;
-  font-family: "ROBOTTO";
+  font-size: clamp(4em, 6vw, 6em);
   font-weight: 800;
   color: #FFF;
-}
-@media screen and (max-width: 800px) {
-  .header__center__title {
-    font-size: 13.34vw;
-  }
+  letter-spacing: 5px;
+  line-height: 0.9;
 }
 @media screen and (max-width: 800px) {
   .header__center__title {
@@ -578,15 +549,9 @@ html {
 }
 
 .header__center__description {
-  font-size: 121%;
-  font-family: "Montserrat";
+  font-size: clamp(1.5em, 3.5vw, 2em);
   font-weight: 600;
   color: #FFF;
-}
-@media screen and (max-width: 800px) {
-  .header__center__description {
-    font-size: 6.38vw;
-  }
 }
 .header__center__description {
   width: 90%;
@@ -611,6 +576,7 @@ html {
 .advantages__block {
   background-color: #2e363b;
   border-top: 5px solid #000;
+  padding-bottom: 5vw;
 }
 .advantages__block {
   width: 95%;
@@ -793,37 +759,19 @@ html {
   }
 }
 .advantages__item__content__box .advantages__item__title {
-  transition: 0.6s;
-}
-.advantages__item__content__box .advantages__item__title {
-  font-size: 169%;
-  font-family: "Montserrat";
+  font-size: clamp(1.3em, 2vw, 2em);
   font-weight: 800;
-  color: #000;
-}
-@media screen and (max-width: 800px) {
-  .advantages__item__content__box .advantages__item__title {
-    font-size: 7.54vw;
-  }
+  transition: 0.6s;
 }
 @media screen and (max-width: 800px) {
   .advantages__item__content__box .advantages__item__title {
     color: #f5c582;
+    font-size: 4vw;
   }
 }
 .advantages__item__content__box .advantages__item__subtitle {
+  font-size: clamp(1.3em, 1.5vw, 1.5em);
   transition: 0.6s;
-}
-.advantages__item__content__box .advantages__item__subtitle {
-  font-size: 121%;
-  font-family: "Montserrat";
-  font-weight: 600;
-  color: #000;
-}
-@media screen and (max-width: 800px) {
-  .advantages__item__content__box .advantages__item__subtitle {
-    font-size: 6.38vw;
-  }
 }
 @media screen and (max-width: 800px) {
   .advantages__item__content__box .advantages__item__subtitle {
@@ -901,8 +849,8 @@ html {
 /* ============================= ADVANTAGES ============================= */
 /* ============================= ABOUT__US ============================= */
 .about__us__block {
+  position: relative;
   background-color: #2e363b;
-  padding: 5vw 0;
 }
 .about__us__block {
   width: 100%;
@@ -923,9 +871,10 @@ html {
   align-items: stretch;
   justify-content: unset;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1500px) {
   .about__us__block {
-    flex-direction: column;
+    overflow-y: auto;
+    perspective: 1px;
   }
 }
 
@@ -951,27 +900,22 @@ html {
   align-items: unset;
   justify-content: unset;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1500px) {
   .about__us__content__box {
+    position: relative;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
     width: 95%;
     padding: 0 2.5%;
     padding-top: 5vw;
+    z-index: 2;
   }
 }
 .about__us__content__box h2 {
-  padding-left: 5px;
-}
-.about__us__content__box h2 {
-  font-size: 324%;
-  font-family: "Montserrat";
+  font-size: clamp(3em, 2.5vw, 3.5em);
   font-weight: 800;
-  color: #000;
-}
-@media screen and (max-width: 800px) {
-  .about__us__content__box h2 {
-    font-size: 10.44vw;
-  }
+  color: #FFF;
+  padding-left: 5px;
 }
 .about__us__content__box h2 .about__us__h2__border {
   width: 1em;
@@ -984,24 +928,11 @@ html {
   }
 }
 .about__us__content__box .about__us__text {
+  font-size: clamp(1.3em, 2vw, 1.5em);
+  font-weight: 600;
+  color: #FFF;
   letter-spacing: 2px;
   line-height: 1.5;
-}
-.about__us__content__box .about__us__text {
-  font-size: 144%;
-  font-family: "Montserrat";
-  font-weight: 600;
-  color: #000;
-}
-@media screen and (max-width: 800px) {
-  .about__us__content__box .about__us__text {
-    font-size: 6.96vw;
-  }
-}
-@media screen and (max-width: 800px) {
-  .about__us__content__box .about__us__text {
-    font-size: 6vw;
-  }
 }
 
 .about__us__wrapper__img {
@@ -1028,13 +959,25 @@ html {
     flex-grow: -1;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1500px) {
   .about__us__wrapper__img {
-    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    filter: grayscale(1) blur(10px);
+    border-radius: unset;
+    overflow: hidden;
   }
 }
 .about__us__wrapper__img img {
   border-radius: 10px 0 0 10px;
+}
+@media screen and (max-width: 1500px) {
+  .about__us__wrapper__img img {
+    border-radius: unset;
+    object-fit: cover;
+  }
 }
 
 /* ============================= ABOUT__US ============================= */
@@ -1062,7 +1005,7 @@ html {
   all: unset;
 }
 .header__lang__box .trp-language-switcher {
-  width: 5vw;
+  width: auto;
 }
 .header__lang__box .trp-language-switcher .trp-ls-shortcode-language {
   padding: unset;
@@ -1228,17 +1171,14 @@ html {
   }
 }
 .form__titles__box .form__content__subtitle {
-  font-size: 100%;
-  font-family: "Montserrat";
+  font-size: clamp(0.8em, 1vw, 1.3em);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.6352941176);
 }
-@media screen and (max-width: 800px) {
-  .form__titles__box .form__content__subtitle {
-    font-size: 5.8vw;
-  }
-}
 .form__titles__box h2 {
+  font-size: clamp(1.3em, 1vw, 1.5em);
+  font-weight: 600;
+  color: #FFF;
   text-transform: uppercase;
 }
 .form__titles__box h2 {
@@ -1476,11 +1416,12 @@ html {
   }
 }
 .form__content .wpforms-submit-container button.wpforms-submit {
-  font-size: 1.3vw !important;
+  font-size: clamp(1.3em, 2vw, 1.5em) !important;
   background: unset !important;
   background-color: rgba(0, 0, 0, 0.2666666667) !important;
-  outline: 1px solid rgba(255, 255, 255, 0.2);
+  outline: 2px solid #FFF;
   outline-offset: -1px;
+  border-radius: 10px;
   padding: 0 1.5vw !important;
   height: 2.5vw !important;
   transition: background, text-shadow 0.4s;
@@ -1493,9 +1434,14 @@ html {
     outline-color: #FFF;
   }
 }
+@media (min-width: 800px) and (max-width: 1500px) {
+  .form__content .wpforms-submit-container button.wpforms-submit {
+    height: 3.5vw !important;
+  }
+}
 .form__content .wpforms-submit-container button.wpforms-submit::before, .form__content .wpforms-submit-container button.wpforms-submit::after {
   content: "\f0eb";
-  font-size: 1vw;
+  font-size: clamp(1.3em, 2vw, 1.5em);
   font-weight: 400;
   font-family: "Font Awesome 6 Free";
   transition: 0.4s;
@@ -1599,6 +1545,11 @@ footer {
     padding-left: 5%;
   }
 }
+@media (min-width: 800px) and (max-width: 1500px) {
+  .footer__contact__block {
+    flex-direction: column;
+  }
+}
 
 .footer__contact__item {
   gap: 1vw;
@@ -1620,7 +1571,7 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: unset;
+  justify-content: flex-start;
 }
 .footer__contact__item .footer__contact__ico {
   font-size: 225%;
@@ -1643,29 +1594,23 @@ footer {
     gap: 5vw;
   }
 }
+@media (min-width: 800px) and (max-width: 1500px) {
+  .footer__contact__item {
+    width: 95%;
+    padding-left: 5%;
+  }
+}
 
 .footer__contact__title {
-  font-size: 196%;
-  font-family: "Montserrat";
+  font-size: clamp(1.5em, 2vw, 2em);
   font-weight: 600;
   color: #FFF;
-}
-@media screen and (max-width: 800px) {
-  .footer__contact__title {
-    font-size: 8.12vw;
-  }
 }
 
 .footer__contact__name {
-  font-size: 144%;
-  font-family: "Montserrat";
+  font-size: clamp(1em, 2vw, 1.5em);
   font-weight: 600;
   color: #FFF;
-}
-@media screen and (max-width: 800px) {
-  .footer__contact__name {
-    font-size: 6.96vw;
-  }
 }
 
 .footer__design__el {
@@ -1676,8 +1621,8 @@ footer {
 }
 @media screen and (max-width: 800px) {
   .footer__design__el {
-    width: 50%;
-    height: 2vw;
+    width: 45%;
+    height: 1vw;
   }
 }
 
@@ -1699,6 +1644,11 @@ footer {
     display: flex;
     flex-direction: column;
     flex-grow: -1;
+  }
+}
+@media screen and (max-width: 800px) {
+  .footer__logo__wrapper {
+    width: 70%;
   }
 }
 .footer__logo__wrapper a {

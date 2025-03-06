@@ -120,7 +120,7 @@ $mfont_size: 5.8vw;
     right: 1vw;
     top: 1vw;
     border-radius: 10px;
-    box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.8);
+    border: 2px solid #FFF;
     background: url(../img/close.png), $color3;
     background-size: 70% 70%;
     background-color: $color1;
@@ -130,8 +130,8 @@ $mfont_size: 5.8vw;
 
     @media screen and (max-width: 800px) {
       & {
-        width: math.div(10, 1) * 1.2vw;
-        height: math.div(10, 1) * 1.2vw;
+        width: math.div(8, 1) * 1.2vw;
+        height: math.div(8, 1) * 1.2vw;
       }
     }
   }
@@ -160,20 +160,17 @@ $mfont_size: 5.8vw;
   }
 
   & i {
-    font-size: 1vw;
+    font-size: clamp(1.5em, 2vw, 2em);
     color: #FFF;
     transition: font-weight .4s, text-shadow .6s;
-
-    @media screen and (max-width: 800px) {
-      font-size: 6vw;
-    }
   }
 
   & span {
+    font-size: clamp(1.5em, 2vw, 2em);
+    font-weight: 800;
+    color: #FFF;
     padding: 0 2vw;
     transition: .4s;
-
-    @include text(130%, 800, #FFF);
 
     @media screen and (max-width: 800px) {
       padding: 0 3vw;
@@ -446,7 +443,6 @@ html {
   gap: 1vw;
 
   @include flex__box(row, center);
-  @include text(140%, 600, #FFF);
 
   @media screen and (max-width: 800px) {
     order: 2;
@@ -457,6 +453,9 @@ html {
   }
 
   & li {
+    font-size: clamp(1.5em, 1.5vw, 2em);
+    font-weight: 600;
+    color: #FFF;
     position: relative;
     top: 0;
     transition: .2s;
@@ -549,10 +548,11 @@ html {
 }
 
 .header__center__title {
+  font-size: clamp(4em, 6vw, 6em);
+  font-weight: 800;
+  color: #FFF;
   letter-spacing: 5px;
   line-height: 0.9;
-
-  @include text(230%, 800, #FFF, 'ROBOTTO');
 
   @media screen and (max-width: 800px) {
     text-align: left;
@@ -560,7 +560,9 @@ html {
 }
 
 .header__center__description {
-  @include text(110%, 600, #FFF);
+  font-size: clamp(1.5em, 3.5vw, 2em);
+  font-weight: 600;
+  color: #FFF;
   @include box(90%);
 }
 
@@ -578,6 +580,7 @@ html {
 .advantages__block {
   background-color: $color1;
   border-top: 5px solid #000;
+  padding-bottom: 5vw;
 
   @include box(100%, 2.5%);
   @include flex__box(row, stretch, space-between);
@@ -672,19 +675,19 @@ html {
   }
 
   & .advantages__item__title {
+    font-size: clamp(1.3em, 2vw, 2em);
+    font-weight: 800;
     transition: .6s;
-
-    @include text(130%, 800);
 
     @media screen and (max-width: 800px) {
       color: $color2;
+      font-size: 4vw;
     }
   }
 
   & .advantages__item__subtitle {
+    font-size: clamp(1.3em, 1.5vw, 1.5em);
     transition: .6s;
-
-    @include text(110%, 600);
 
     @media screen and (max-width: 800px) {
       color: #FFF;
@@ -749,14 +752,15 @@ html {
 /* ============================= ABOUT__US ============================= */
 
 .about__us__block {
+  position: relative;
   background-color: $color1;
-  padding: 5vw 0;
 
   @include box(100%);
   @include flex__box(row, stretch);
 
-  @media screen and (max-width: 800px) {
-    flex-direction: column;
+  @media screen and (max-width: 1500px) {
+    overflow-y: auto;
+    perspective: 1px;
   }
 }
 
@@ -766,16 +770,21 @@ html {
   @include box(50%, 2.5%);
   @include flex__box(column);
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1500px) {
+    position: relative;
     align-items: center;
+    background-color: rgba(#000, 0.3);
     width: 95%;
     padding: 0 2.5%;
     padding-top: 5vw;
+    z-index: 2;
   }
 
   & h2 {
+    font-size: clamp(3em, 2.5vw, 3.5em);
+    font-weight: 800;
+    color: #FFF;
     padding-left: 5px;
-    @include text(180%, 800, #000);
 
     & .about__us__h2__border {
       @include h2__el(1em);
@@ -783,14 +792,11 @@ html {
   }
 
   & .about__us__text {
+    font-size: clamp(1.3em, 2vw, 1.5em);
+    font-weight: 600;
+    color: #FFF;
     letter-spacing: 2px;
     line-height: 1.5;
-
-    @include text(120%, 600, #000);
-
-    @media screen and (max-width: 800px) {
-      font-size: 6vw;
-    }
   }
 }
 
@@ -800,12 +806,23 @@ html {
 
   @include img_box(50%);
 
-  @media screen and (max-width: 800px) {
-    display: none;
+  @media screen and (max-width: 1500px) {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    filter: grayscale(1) blur(10px);
+    border-radius: unset;
+    overflow: hidden;
   }
 
   & img {
     border-radius: 10px 0 0 10px;
+
+    @media screen and (max-width: 1500px) {
+      border-radius: unset;
+      object-fit: cover;
+    }
   }
 }
 
@@ -840,7 +857,7 @@ html {
   }
 
   & .trp-language-switcher {
-    width: 5vw;
+    width: auto;
 
     & .trp-ls-shortcode-language {
       padding: unset;
@@ -944,10 +961,16 @@ html {
   }
 
   & .form__content__subtitle {
-    @include text(100%, 600, #ffffffa2);
+    font-size: clamp(0.8em, 1vw, 1.3em);
+    font-weight: 600;
+    color: #ffffffa2;
+    // @include text(100%, 600, #ffffffa2);
   }
 
   & h2 {
+    font-size: clamp(1.3em, 1vw, 1.5em);
+    font-weight: 600;
+    color: #FFF;
     text-transform: uppercase;
 
     @include text(140%, 600, #FFF);
@@ -959,7 +982,7 @@ html {
 }
 
 .form__content {
-  
+
   @media screen and (max-width: 800px) {
     padding-top: 5vw;
     width: 95%;
@@ -988,7 +1011,7 @@ html {
       @include box(32%);
 
       @media screen and (max-width: 800px) {
-      padding: 25px 0 !important;
+        padding: 25px 0 !important;
       }
 
       & input {
@@ -1094,12 +1117,13 @@ html {
     }
   }
 
-  & .wpforms-submit-container button.wpforms-submit{
-    font-size: 1.3vw !important;
+  & .wpforms-submit-container button.wpforms-submit {
+    font-size: clamp(1.3em, 2vw, 1.5em) !important;
     background: unset !important;
     background-color: #0004 !important;
-    outline: 1px solid #FFF3;
+    outline: 2px solid #FFF;
     outline-offset: -1px;
+    border-radius: 10px;
     padding: 0 1.5vw !important;
     height: 2.5vw !important;
     transition: background, text-shadow 0.4s;
@@ -1111,9 +1135,14 @@ html {
       outline-color: #FFF;
     }
 
-    &::before, &::after{
+    @media (min-width: 800px) and (max-width: 1500px) {
+      height: 3.5vw !important;
+    }
+
+    &::before,
+    &::after {
       content: '\f0eb';
-      font-size: 1vw;
+      font-size: clamp(1.3em, 2vw, 1.5em);
       font-weight: 400;
       font-family: 'Font Awesome 6 Free';
       transition: .4s;
@@ -1123,36 +1152,37 @@ html {
       }
     }
 
-    &::before{
+    &::before {
       padding-right: 1vw;
     }
 
-    &::after{
+    &::after {
       padding-left: 1vw;
     }
 
-    &:hover{
+    &:hover {
       outline-offset: 0px;
       outline: 1px solid #FFF;
       background-color: $color2 !important;
       text-shadow: 0px 0px 5px #000,
         0px 0px 10px #000;
 
-        &::after, &::before{
-          font-weight: 800;
-        }
+      &::after,
+      &::before {
+        font-weight: 800;
+      }
     }
 
     &:focus {
       padding: 0 1.5vw !important;
-    
+
       &::before,
       &::after {
         content: '\f0eb';
         color: $color2;
       }
 
-      &::after{
+      &::after {
         position: relative !important;
         border: none !important;
         top: unset !important;
@@ -1169,7 +1199,7 @@ html {
 
 /* ============================= FOOTER ============================= */
 
-footer{
+footer {
   background-color: $color1;
   padding: 5vw 2.5%;
 
@@ -1184,10 +1214,10 @@ footer{
   }
 }
 
-.footer__contact__block{
+.footer__contact__block {
   gap: 1vw 5%;
   flex-wrap: wrap;
-  
+
   @include box(30%);
   @include flex__box(row, center, center);
 
@@ -1195,62 +1225,82 @@ footer{
     width: 95%;
     padding-left: 5%;
   }
+
+  @media (min-width: 800px) and (max-width: 1500px) {
+    flex-direction: column;
+  }
 }
 
-.footer__contact__item{
+.footer__contact__item {
   gap: 1vw;
 
   @include box(47.5%);
-  @include flex__box(row, center);
+  @include flex__box(row, center, flex-start);
 
-  & .footer__contact__ico{
+  & .footer__contact__ico {
     @include text(150%, 900, #FFF, "Font Awesome 5 Free");
-    
+
     @media screen and (max-width: 800px) {
       width: 10vw;
     }
+
   }
-  
+
   @media screen and (max-width: 800px) {
     gap: 5vw;
   }
+
+  @media (min-width: 800px) and (max-width: 1500px) {
+    width: 95%;
+    padding-left: 5%;
+  }
 }
 
-.footer__contact__title{
-  @include text(140%, 600, #FFF);
+.footer__contact__title {
+  font-size: clamp(1.5em, 2vw, 2em);
+  font-weight: 600;
+  color: #FFF;
+  // @include text(140%, 600, #FFF);
 }
 
-.footer__contact__name{
-  @include text(120%, 600, #FFF);
+.footer__contact__name {
+  font-size: clamp(1em, 2vw, 1.5em);
+  font-weight: 600;
+  color: #FFF;
+  // @include text(120%, 600, #FFF);
 }
 
-.footer__design__el{
+.footer__design__el {
   width: 5vw;
   height: 0.3vw;
   background-color: $color2;
   border-radius: 20px;
 
   @media screen and (max-width: 800px) {
-    width: 50%;
-    height: 2vw;
+    width: 45%;
+    height: 1vw;
   }
 }
 
-.footer__logo__wrapper{
+.footer__logo__wrapper {
   @include img_box(30%);
 
-  & a{
+  @media screen and (max-width: 800px) {
+    width: 70%;
+  }
+
+  & a {
     display: block;
   }
 }
 
-.footer__contact__item__box{
+.footer__contact__item__box {
   @include flex__box(column);
 
   @media screen and (max-width: 800px) {
     width: 85%;
-    
-    & .footer__mail{
+
+    & .footer__mail {
       font-size: 4.5vw;
     }
   }
